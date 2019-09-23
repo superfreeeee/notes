@@ -674,3 +674,148 @@ public class AnotherExampleBean implements DisposableBean {
 }
 ```
 ### 5.4 Default Initialization and Destroy Method
+- `init()`, `initialize()`, `dispose()`
+```java
+public class DefaultBlogService implements BlogService {
+
+    private BlogDao blogDao;
+
+    public void setBlogDao(BlogDao blogDao) {
+        this.blogDao = blogDao;
+    }
+
+    // this is (unsurprisingly) the initialization callback method
+    public void init() {
+        if (this.blogDao == null) {
+            throw new IllegalStateException("The [blogDao] property must be set.");
+        }
+    }
+}
+```
+```xml
+<!-- set default-init-method attrubute on <beans> -->
+<beans default-init-method="init">
+
+    <bean id="blogService" class="com.something.DefaultBlogService">
+        <property name="blogDao" ref="blogDao" />
+    </bean>
+
+</beans>
+
+<!-- similarly, set default-destroy-method for destruction -->
+```
+### 5.5 Spring-managed Object interface for lifecycle control
+```java
+// Lifecycle interface
+package org.springframework.context;
+
+public interface Lifecycle {
+
+    void start();
+
+    void stop();
+
+    boolean isRunning();
+}
+
+// Phased interface
+public interface Phased {
+
+    int getPhase();
+}
+
+// SamrtLifeCycle, for auto-startup
+import org.springframework.context.SmartLifeCycle;
+
+public interface SmartLifecycle extends Lifecycle, Phased {
+
+    boolean isAutoStartup();
+
+    void stop(Runnable callback);
+}
+
+// extended interface from Lifecycle
+public interface LifecycleProcessor extends Lifecycle {
+
+    void onRefresh();
+
+    void onClose();
+}
+```
+
+### 5.6 ApplicationContextAware and BeanNameAware
+```java
+// ApplicationContextAware interface
+package org.springframework.context;
+
+public interface ApplicationContextAware {
+
+    // provide a reference to applicationContext
+    void setApplicationContext(ApplicationContext applicationContext) throws BeansException;
+}
+
+// BeanNameAware interface
+package org.springframework.beans.factory;
+public interface BeanNameAware {
+
+    void setBeanName(String name) throws BeansException;
+}
+```
+
+### 5.7 Other Aware Interfaces
+Name | Injected Dependency | Explained in…​
+---|---|---
+ApplicationContextAware | Declaring ApplicationContext. | ApplicationContextAware and BeanNameAware
+ApplicationEventPublisherAware | Event publisher of the enclosing ApplicationContext. | Additional Capabilities of the ApplicationContext
+BeanClassLoaderAware | Class loader used to load the bean classes. | Instantiating Beans
+BeanFactoryAware | Declaring BeanFactory. | ApplicationContextAware and BeanNameAware
+BeanNameAware | Name of the declaring bean. | ApplicationContextAware and BeanNameAware
+BootstrapContextAware | Resource adapter BootstrapContext the container runs in. Typically available only in JCA-aware ApplicationContext instances. | JCA CCI
+LoadTimeWeaverAware | Defined weaver for processing class definition at load time. | Load-time Weaving with AspectJ in the Spring Framework
+MessageSourceAware | Configured strategy for resolving messages (with support for parametrization and internationalization). | Additional Capabilities of the ApplicationContext
+NotificationPublisherAware | Spring JMX notification publisher. | Notifications
+ResourceLoaderAware | Configured loader for low-level access to resources. | Resources
+ServletConfigAware | Current ServletConfig the container runs in. Valid only in a web-aware Spring ApplicationContext. | Spring MVC
+ServletContextAware | Current ServletContext the container runs in. Valid only in a web-aware Spring ApplicationContext. | Spring 
+
+## 6. Bean Definition Inheritance
+
+### 6.1 Define parent on xml-based configuration
+- inherits `scope`, `constructor argument values`, `property values`, and `method overrides` from the parent
+- inherits `scope`, `initialization method`, `destroy method`, or `static factory method` settings which have option to be overrided by child bean
+- always taken from child definition: `depends on`, `autowire mode`, `dependency check`, `singleton`, and `lazy init`
+```xml
+<bean id="inheritedTestBean" abstract="true"
+        class="org.springframework.beans.TestBean">
+    <property name="name" value="parent"/>
+    <property name="age" value="1"/>
+</bean>
+
+<bean id="inheritsWithDifferentClass"
+        class="org.springframework.beans.DerivedTestBean"
+        parent="inheritedTestBean" init-method="initialize">  
+    <property name="name" value="override"/>
+    <!-- the age property value of 1 will be inherited from parent -->
+</bean>
+```
+### 6.2 Inject property value with abstract parent
+- while bean has `abstract="true"` attribute, its unnecessary to specify `class` attribute
+```xml
+<bean id="inheritedTestBeanWithoutClass" abstract="true">
+    <property name="name" value="parent"/>
+    <property name="age" value="1"/>
+</bean>
+
+<bean id="inheritsWithClass" class="org.springframework.beans.DerivedTestBean"
+        parent="inheritedTestBeanWithoutClass" init-method="initialize">
+    <property name="name" value="override"/>
+    <!-- age will inherit the value of 1 from the parent bean definition-->
+</bean>
+```
+
+## 7. Container Extension Points
+
+### 7.1 Customizing Beans by Using BeanPostProcessor
+- `BeanPostProcessor` enable developer to provide his own logic for `Spring Container` 
+- Customizing `BeanPostProcessor` should implements `Ordered` interface
+- To change the actual bean definition for beans in another hierarchies, use `BeanFactoryPostProcessor`
