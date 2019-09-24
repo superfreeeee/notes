@@ -590,6 +590,7 @@ let myIdentity: {<T>(arg: T): T} = identity;
 
 ### 6.3 泛型接口
 ```ts
+// 函數參數
 interface GenericIdentityFn {
   <T>(arg: T): T;
 }
@@ -599,6 +600,240 @@ function identity<T>(arg: T): T {
 }
 
 let myIdentity: GenericIdentityFn = identity;
+
+// 整個接口的參數
+interface GenericIdentityFn<T> {
+  (arg: T): T;
+}
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let myIdentity: GenericIdentityFn<number> = identity;
 ```
 
+### 6.4 泛型類
+```ts
+class GenericNumber<T> {
+  zeroValue: T;
+  add: (x: T, y: T) => T;
+}
 
+// 作為 number
+let myGenericNumber = new GenericNumber<number>();
+myGenericNumber.zeroValue = 0;
+myGenericNumber.add = function(x, y) { return x + y; };
+
+// 作為 string
+let stringNumeric = new GenericNumber<string>();
+stringNumeric.zeroValue = "";
+stringNumeric.add = function(x, y) { return x + y; };
+
+console.log(stringNumeric.add(stringNumeric.zeroValue, "test"));
+```
+
+### 6.5 泛型約束
+```ts
+interface Lengthwise {
+  length: number;
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  console.log(arg.length);  // Now we know it has a .length property, so no more error
+  return arg;
+}
+
+loggingIdentity(3);  // Error, number doesn't have a .length property
+loggingIdentity({length: 10, value: 3});  // 運用解構賦值，參數必須具有必要屬性
+```
+
+### 6.6 類型參數
+```ts
+function getProperty(obj: T, key: K) {
+  return obj[key];
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4 };
+
+getProperty(x, "a"); // okay
+getProperty(x, "m"); // error: Argument of type 'm' isn't assignable to 'a' | 'b' | 'c' | 'd'.
+```
+
+### 6.7 泛型使用類類型
+```ts
+// 工廠函數引用構造函數類型
+function create<T>(c: {new(): T; }): T {
+  return new c();
+}
+
+// 原型屬性推斷並約束構造函數與實例類型
+class BeeKeeper {
+  hasMask: boolean;
+}
+
+class ZooKeeper {
+  nametag: string;
+}
+
+class Animal {
+  numLegs: number;
+}
+
+class Bee extends Animal {
+  keeper: BeeKeeper;
+}
+
+class Lion extends Animal {
+  keeper: ZooKeeper;
+}
+
+function createInstance<A extends Animal>(c: new () => A): A {
+  return new c();
+}
+
+createInstance(Lion).keeper.nametag;  // typechecks!
+createInstance(Bee).keeper.hasMask;   // typechecks!
+```
+
+## 7. 枚舉
+
+### 7.1 數字枚舉
+```ts
+// 初始化為 1，默認為 0
+enum Direction {
+  Up = 1,
+  Down,
+  Left,
+  Right
+}
+
+// 訪問方法：枚舉類作為類型，訪問成員為值
+enum Response {
+  No = 0,
+  Yes = 1,
+}
+
+function respond(recipient: string, message: Response): void {
+  // ...
+}
+
+respond("Princess Caroline", Response.Yes)
+
+// 常數初始化必須在前，計算式後不可有未初始化常量
+enum E {
+  A = getSomeValue(),
+  B, // error! 'A' is not constant-initialized, so 'B' needs an initializer
+}
+```
+
+### 7.2 字符串枚舉
+```ts
+enum Direction {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT",
+}
+```
+
+### 7.3 計算和常量成員
+```ts
+enum FileAccess {
+  // constant members
+  None,
+  Read    = 1 << 1,
+  Write   = 1 << 2,
+  ReadWrite  = Read | Write,  // 對前面成員的引用
+  // computed member
+  G = "123".length
+}
+```
+
+### 7.4 枚舉成員類型
+```ts
+enum ShapeKind {
+  Circle,
+  Square,
+}
+
+interface Circle {
+  kind: ShapeKind.Circle;
+  radius: number;
+}
+
+interface Square {
+  kind: ShapeKind.Square;
+  sideLength: number;
+}
+
+let c: Circle = {
+  kind: ShapeKind.Square,
+  //    ~~~~~~~~~~~~~~~~ Error!
+  radius: 100,
+}
+
+// 類似短路檢查效果
+enum E {
+  Foo,
+  Bar,
+}
+
+function f(x: E) {
+  if (x !== E.Foo || x !== E.Bar) {
+    //             ~~~~~~~~~~~
+    // Error! Operator '!==' cannot be applied to types 'E.Foo' and 'E.Bar'.
+  }
+}
+```
+
+### 7.5 運行時原型
+```ts
+// 枚舉類
+enum E { X, Y, Z }
+
+// 運行時原型：function
+function f(obj: { X: number }) {
+  return obj.X;
+}
+```
+
+### 7.6 反向映射
+```ts
+enum Enum { A }
+let a = Enum.A;
+let nameOfA = Enum[a]; // "A"
+
+// 對應原代碼
+// P.S. 不会为字符串枚举成员生成反向映射
+var Enum;
+(function (Enum) {
+  Enum[Enum["A"] = 0] = "A";
+})(Enum || (Enum = {}));
+var a = Enum.A;
+var nameOfA = Enum[a]; // "A"
+```
+
+### 7.7 常量枚舉
+```ts
+// 常量枚举不允许包含计算成员
+const enum Directions {
+  Up,
+  Down,
+  Left,
+  Right
+}
+
+let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right]
+```
+
+### 7.8 外部枚舉 ???
+```ts
+declare enum Enum {
+  A = 1,
+  B,
+  C = 2
+}
+```
+
+## 8. 類型推論

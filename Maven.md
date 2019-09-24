@@ -17,28 +17,6 @@ ${basedir}
     └──test-classes   // 測試編譯輸出目錄
 ```
 
-## Maven POM
-```xml
-<project xmlns = "http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0
-  http://maven.apache.org/xsd/maven-4.0.0.xsd">
- 
-  <!-- 模型版本 -->
-  <modelVersion>4.0.0</modelVersion>
-  <!-- 公司或者组织的唯一标志，并且配置时生成的路径也是由此生成， 
-  com.companyname.project-group
-  =/com/companyname/project-group -->
-  <groupId>com.companyname.project-group</groupId>
- 
-  <!-- 项目的唯一ID，一个groupId下面可能多个项目，就是靠artifactId来区分的 -->
-  <artifactId>project</artifactId>
- 
-  <!-- 版本号 -->
-  <version>1.0</version>
-</project>
-```
-
 ## 構建生命週期
 - 標準生命週期
 ```
@@ -60,7 +38,31 @@ $ mvn clean dependency:copy-dependencies package
 ```
 
 
-## Maven POM標籤大全
+## Maven POM標籤
+
+### 概要
+```xml
+<project xmlns = "http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0
+  http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 
+  <!-- 模型版本 -->
+  <modelVersion>4.0.0</modelVersion>
+  <!-- 公司或者组织的唯一标志，并且配置时生成的路径也是由此生成， 
+  com.companyname.project-group
+  =/com/companyname/project-group -->
+  <groupId>com.companyname.project-group</groupId>
+ 
+  <!-- 项目的唯一ID，一个groupId下面可能多个项目，就是靠artifactId来区分的 -->
+  <artifactId>project</artifactId>
+ 
+  <!-- 版本号 -->
+  <version>1.0</version>
+</project>
+```
+
+### 常用
 ```xml
 <!-- 根節點 -->
 <!-- xmlns, xmlns:xsi, xsi:schemaLocation -->
@@ -133,6 +135,8 @@ $ mvn clean dependency:copy-dependencies package
   </dependencies>
 </project>
 ```
+---
+### description
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0http://maven.apache.org/maven-v4_0_0.xsd">
