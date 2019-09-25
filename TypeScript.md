@@ -837,3 +837,571 @@ declare enum Enum {
 ```
 
 ## 8. 類型推論
+```ts
+let x = 3;  // then x: number
+
+// 自動選擇最佳類型
+let zoo: Animal[] = [new Rhino(), new Elephant(), new Snake()];   // (Rhino | Elephant | Snake)[]
+```
+
+### 8.1 上下文類型
+- 可從`函數參數`、`賦值表達式的右側`、`類型斷言`、`對象成員`、`數組字面量`、`返回值語句`推斷類型
+```ts
+// 由 window.onmousedown 類型推論
+window.onmousedown = function(mouseEvent) {
+  console.log(mouseEvent.button);  //<- Error
+};
+
+// 明確指出
+window.onmousedown = function(mouseEvent: any) {
+  console.log(mouseEvent.button);  //<- Now, no error is given
+};
+```
+
+## 9. 類型兼容性
+- TypeScript 的類型是基於`結構子類型`（以成員來描述類型）
+```ts
+interface Named {
+  name: string;
+}
+
+class Person {
+  name: string;
+}
+
+let p: Named;
+// OK, because of structural typing
+p = new Person();
+
+// y 兼容 x 或至少 y 擁有 x 相同的屬性
+interface Named {
+  name: string;
+}
+
+let x: Named;
+// y's inferred type is { name: string; location: string; }
+let y = { name: 'Alice', location: 'Seattle' };
+x = y;
+```
+
+### 9.1 比較參數
+```ts
+// 比較參數類型：對應原函數類型，y需要第二參數類型而報錯
+let x = (a: number) => 0;
+let y = (b: number, s: string) => 0;
+
+y = x; // OK
+x = y; // Error
+
+// 比較返回類型：：尋找比須屬性，x無法提供y第二參數的類型
+let x = () => ({name: 'Alice'});
+let y = () => ({name: 'Alice', location: 'Seattle'});
+
+x = y; // OK
+y = x; // Error, because x() lacks a location property
+```
+
+### 9.2 可選參數和剩餘參數
+- 剩餘參數被當作無限多個可選參數
+```ts
+function invokeLater(args: any[], callback: (...args: any[]) => void) {
+  /* ... Invoke callback with 'args' ... */
+}
+
+// Unsound - invokeLater "might" provide any number of arguments
+invokeLater([1, 2], (x, y) => console.log(x + ', ' + y));
+
+// Confusing (x and y are actually required) and undiscoverable
+invokeLater([1, 2], (x?, y?) => console.log(x + ', ' + y));
+```
+
+### 9.3 枚舉兼容性
+- 不同枚舉類不兼容
+```ts
+enum Status { Ready, Waiting };
+enum Color { Red, Blue, Green };
+
+let status = Status.Ready;
+status = Color.Green;  // Error
+```
+
+### 9.4 類兼容性
+- 只比較`實例成員`不比較靜態類型和構造函數
+```ts
+class Animal {
+  feet: number;
+  constructor(name: string, numFeet: number) { }
+}
+
+class Size {
+  feet: number;
+  constructor(numFeet: number) { }
+}
+
+let a: Animal;
+let s: Size;
+
+a = s;  // OK
+s = a;  // OK
+// 對於 private 和 protect 的成員必須來源於同一處定義
+```
+
+### 9.5 泛型兼容性
+- 比較代入參數後的`實際結構`
+```ts
+// same
+interface Empty<T> {
+}
+let x: Empty<number>;
+let y: Empty<string>;
+
+x = y;  // OK, because y matches structure of x
+
+// different
+interface NotEmpty<T> {
+  data: T;
+}
+let x: NotEmpty<number>;
+let y: NotEmpty<string>;
+
+x = y;  // Error, because x and y are not compatible
+```
+- 未指定泛型參數視作 `any`
+```ts
+let identity = function<T>(x: T): T { }
+let reverse = function<U>(y: U): U { }
+identity = reverse;  // OK, because (x: any) => any matches (y: any) => any
+```
+
+## 10. 高級類型
+
+### 10.1 交叉類型
+- 使用在`混入`或是不適合典型對象模型的地方
+```ts
+function extend<T, U>(first: T, second: U): T & U {
+  let result = <T & U>{};
+  for (let id in first) {
+    (<any>result)[id] = (<any>first)[id];
+  }
+  for (let id in second) {
+    if (!result.hasOwnProperty(id)) {
+      (<any>result)[id] = (<any>second)[id];
+    }
+  }
+  return result;
+}
+
+class Person {
+  constructor(public name: string) { }
+}
+interface Loggable {
+  log(): void;
+}
+class ConsoleLogger implements Loggable {
+  log() {
+    // ...
+  }
+}
+var jim = extend(new Person("Jim"), new ConsoleLogger());
+var n = jim.name;
+jim.log();
+```
+
+### 10.2 聯合類型
+- 提供所有可能類型
+```ts
+function padLeft(value: string, padding: string | number) {
+  // ...
+}
+
+let indentedString = padLeft("Hello world", true); // errors during compilation
+```
+- 只能訪問所有可能類型共同屬性
+```ts
+interface Bird {
+  fly();
+  layEggs();
+}
+
+interface Fish {
+  swim();
+  layEggs();
+}
+
+function getSmallPet(): Fish | Bird {
+  // ...
+}
+
+let pet = getSmallPet();
+pet.layEggs(); // okay
+pet.swim();    // errors
+```
+
+### 10.3 類型保護
+- 類型謂詞
+```ts
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (<Fish>pet).swim !== undefined;
+}
+```
+- 變量類型縮減
+```ts
+// OK!
+if (isFish(pet)) {
+  pet.swim();
+}
+else {
+  pet.fly();
+}
+```
+
+#### 10.3.1 typeof
+- 默認視 `typeof` 為類型保護
+- type 必須是 `"number"`, `"string"`, `"boolean"`, `"symbol"`，否則不提供類型保護
+```ts
+// 應用
+function isNumber(x: any): x is number {
+  return typeof x === "number";
+}
+
+function isString(x: any): x is string {
+  return typeof x === "string";
+}
+
+function padLeft(value: string, padding: string | number) {
+  if (isNumber(padding)) {
+    return Array(padding + 1).join(" ") + value;
+  }
+  if (isString(padding)) {
+    return padding + value;
+  }
+  throw new Error(`Expected string or number, got '${padding}'.`);
+}
+
+// 簡化
+function padLeft(value: string, padding: string | number) {
+  if (typeof padding === "number") {
+    return Array(padding + 1).join(" ") + value;
+  }
+  if (typeof padding === "string") {
+    return padding + value;
+  }
+  throw new Error(`Expected string or number, got '${padding}'.`);
+}
+```
+
+#### 10.3.2 instanceof
+- 細化類型
+- 右側必須是`構造函數`簽名
+```ts
+interface Padder {
+  getPaddingString(): string
+}
+
+class SpaceRepeatingPadder implements Padder {
+  constructor(private numSpaces: number) { }
+  getPaddingString() {
+    return Array(this.numSpaces + 1).join(" ");
+  }
+}
+
+class StringPadder implements Padder {
+  constructor(private value: string) { }
+  getPaddingString() {
+    return this.value;
+  }
+}
+
+function getRandomPadder() {
+  return Math.random() < 0.5 ?
+    new SpaceRepeatingPadder(4) :
+    new StringPadder("  ");
+}
+
+// 类型为SpaceRepeatingPadder | StringPadder
+let padder: Padder = getRandomPadder();
+
+if (padder instanceof SpaceRepeatingPadder) {
+  padder; // 类型细化为'SpaceRepeatingPadder'
+}
+if (padder instanceof StringPadder) {
+  padder; // 类型细化为'StringPadder'
+}
+```
+
+### 10.4 null類型
+- JS可任意賦值為`null`
+- `--strictNullChecks`标记將不包含，使用聯合類型明確包含他們
+- 區別對待`null`和`undefined`
+```ts
+let s = "foo";
+s = null; // 错误, 'null'不能赋值给'string'
+let sn: string | null = "bar";
+sn = null; // 可以
+
+sn = undefined; // error, 'undefined'不能赋值给'string | null'
+```
+
+#### 10.4.1 可選參數和可選屬性
+- 使用`--strictNullChecks`將自動加上 `| undefined`
+```ts
+// 可選參數
+function f(x: number, y?: number) {
+  return x + (y || 0);
+}
+f(1, 2);
+f(1);
+f(1, undefined);
+f(1, null); // error, 'null' is not assignable to 'number | undefined'
+
+// 可選屬性
+class C {
+  a: number;
+  b?: number;
+}
+let c = new C();
+c.a = 12;
+c.a = undefined; // error, 'undefined' is not assignable to 'number'
+c.b = 13;
+c.b = undefined; // ok
+c.b = null; // error, 'null' is not assignable to 'number | undefined'
+```
+
+#### 10.4.2 類型保護以去除null
+```ts
+// 顯式，與原本的JS相同
+function f(sn: string | null): string {
+  if (sn == null) {
+    return "default";
+  }
+  else {
+    return sn;
+  }
+}
+
+// 使用短路運算符
+function f(sn: string | null): string {
+  return sn || "default";
+}
+
+// 使用 ! 去除null
+function broken(name: string | null): string {
+  function postfix(epithet: string) {
+    return name.charAt(0) + '.  the ' + epithet; // error, 'name' is possibly null
+  }
+  name = name || "Bob";
+  return postfix("great");
+}
+
+function fixed(name: string | null): string {
+  function postfix(epithet: string) {
+    return name!.charAt(0) + '.  the ' + epithet; // ok
+  }
+  name = name || "Bob";
+  return postfix("great");
+}
+```
+### 10.5 類型別名
+- 類似接口，可作用於`原始值`、`聯合類型`、`元組`
+- vs 接口：不可擴展或繼承（不可 `extends` 和 `implements`）
+```ts
+// 不新建類型，僅創建一個名字來引用類型
+type Name = string;
+type NameResolver = () => string;
+type NameOrResolver = Name | NameResolver;
+function getName(n: NameOrResolver): Name {
+  if (typeof n === 'string') {
+    return n;
+  }
+  else {
+    return n();
+  }
+}
+```
+```ts
+// 泛型
+type Container<T> = { value: T };
+
+// 引用自己（遞歸聲明）
+type Tree<T> = {
+  value: T;
+  left: Tree<T>;
+  right: Tree<T>;
+}
+
+// 配合交叉類型
+type LinkedList<T> = T & { next: LinkedList<T> };
+
+interface Person {
+    name: string;
+}
+
+var people: LinkedList<Person>;
+var s = people.name;
+var s = people.next.name;
+var s = people.next.next.name;
+var s = people.next.next.next.name;
+
+// 不可作為右值
+type Yikes = Array<Yikes>; // error
+```
+#### 10.5.1 字符串字面量
+```ts
+type Easing = "ease-in" | "ease-out" | "ease-in-out";
+class UIElement {
+  animate(dx: number, dy: number, easing: Easing) {
+    if (easing === "ease-in") {
+      // ...
+    }else if (easing === "ease-out") {
+
+    }else if (easing === "ease-in-out") {
+
+    }else {
+      // error! should not pass null or undefined.
+    }
+  }
+}
+
+let button = new UIElement();
+button.animate(0, 0, "ease-in");
+button.animate(0, 0, "uneasy"); // error: "uneasy" is not allowed here
+
+// 區分函數重載
+function createElement(tagName: "img"): HTMLImageElement;
+function createElement(tagName: "input"): HTMLInputElement;
+// ... more overloads ...
+function createElement(tagName: string): Element {
+    // ... code goes here ...
+}
+```
+
+#### 10.5.2 數字字面量
+- 可用於小範圍調試
+```ts
+function rollDie(): 1 | 2 | 3 | 4 | 5 | 6 {
+  // ...
+}
+
+function foo(x: number) {
+  if (x !== 1 || x !== 2) {
+    //         ~~~~~~~
+    // Operator '!==' cannot be applied to types '1' and '2'.
+  }
+}
+```
+
+### 10.6 可辨識聯合（標籤聯合、代數數據聯合）
+- 結合`单例类型`, `联合类型`, `类型保护`, `类型别名`的高級應用
+```ts
+// kind 作為“可辨識特徵”or“標籤”
+interface Square {  // 單例類型
+  kind: "square";
+  size: number;
+}
+interface Rectangle {
+  kind: "rectangle";
+  width: number;
+  height: number;
+}
+interface Circle {
+  kind: "circle";
+  radius: number;
+}
+
+type Shape = Square | Rectangle | Circle; // 聯合類型、類型別名
+
+function area(s: Shape) {
+  switch (s.kind) { // 類型保護
+    case "square": return s.size * s.size;
+    case "rectangle": return s.height * s.width;
+    case "circle": return Math.PI * s.radius ** 2;
+  }
+}
+```
+#### 10.6.1 完整性檢查
+```ts
+// 使用 --strictNullChecks 並指定返回類型
+function area(s: Shape): number { // error: returns number | undefined
+  switch (s.kind) {
+    case "square": return s.size * s.size;
+    case "rectangle": return s.height * s.width;
+    case "circle": return Math.PI * s.radius ** 2;
+  }
+}
+
+// 使用 never 類型
+function assertNever(x: never): never {
+  throw new Error("Unexpected object: " + x);
+}
+function area(s: Shape) {
+  switch (s.kind) {
+    case "square": return s.size * s.size;
+    case "rectangle": return s.height * s.width;
+    case "circle": return Math.PI * s.radius ** 2;
+    default: return assertNever(s); // error here if there are missing cases
+  }
+}
+```
+
+### 10.7 多態 this 類型
+- 連貫接口繼承，函數返回`this`以支持鏈式操作
+```ts
+class BasicCalculator {
+  public constructor(protected value: number = 0) { }
+  public currentValue(): number {
+    return this.value;
+  }
+  public add(operand: number): this {
+      this.value += operand;
+    return this;
+  }
+  public multiply(operand: number): this {
+    this.value *= operand;
+    return this;
+  }
+  // ... other operations go here ...
+}
+
+let v = new BasicCalculator(2)
+        .multiply(5)
+        .add(1)
+        .currentValue();
+
+// 可直接擴展
+class ScientificCalculator extends BasicCalculator {
+  public constructor(value = 0) {
+    super(value);
+  }
+  public sin() {
+    this.value = Math.sin(this.value);
+    return this;
+  }
+  // ... other operations go here ...
+}
+
+let v = new ScientificCalculator(2)
+        .multiply(5)
+        .sin()
+        .add(1)
+        .currentValue();
+```
+
+### 10.8 索引類型
+```ts
+function pluck<T, K extends keyof T>(o: T, names: K[]): T[K][] {
+  return names.map(n => o[n]);
+}
+
+interface Person {
+  name: string;
+  age: number;
+}
+let person: Person = {
+  name: 'Jarid',
+  age: 35
+};
+let strings: string[] = pluck(person, ['name']); // ok, string[]
+```
+
+
+
