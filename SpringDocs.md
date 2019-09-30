@@ -815,7 +815,500 @@ ServletContextAware | Current ServletContext the container runs in. Valid only i
 
 ## 7. Container Extension Points
 
-### 7.1 Customizing Beans by Using BeanPostProcessor
+### 7.1 Customizing Beans by Using `BeanPostProcessor`
 - `BeanPostProcessor` enable developer to provide his own logic for `Spring Container` 
 - Customizing `BeanPostProcessor` should implements `Ordered` interface
 - To change the actual bean definition for beans in another hierarchies, use `BeanFactoryPostProcessor`
+
+### 7.2 A custom `BeanPostProcessor` implementation
+```java
+package scripting;
+
+import org.springframework.beans.factory.config.BeanPostProcessor;
+
+public class InstantiationTracingBeanPostProcessor implements BeanPostProcessor {
+
+    // simply return the instantiated bean as-is
+    public Object postProcessBeforeInitialization(Object bean, String beanName) {
+        return bean; // we could potentially return any object reference here...
+    }
+
+    public Object postProcessAfterInitialization(Object bean, String beanName) {
+        System.out.println("Bean '" + beanName + "' created : " + bean.toString());
+        return bean;
+    }
+}
+```
+
+### 7.3 Customizing Configuration Metadata with a BeanFactoryPostProcessor
+... be continue
+
+
+
+## 8. Annotation-based Container Configuration
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+</beans>
+```
+### 8.1 `@Required`
+- apply to bean property setter methods
+- deprecated -> in favor of using constructor injection
+```java
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Required
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // ...
+}
+```
+
+### 8.2 `@Autowired`
+- fundamentally to detect by bean's type
+- in order to identify specific bean, use `@Resource`
+
+- for constructor
+```java
+public class MovieRecommender {
+
+    private final CustomerPreferenceDao customerPreferenceDao;
+
+    @Autowired
+    public MovieRecommender(CustomerPreferenceDao customerPreferenceDao) {
+        this.customerPreferenceDao = customerPreferenceDao;
+    }
+
+    // ...
+}
+```
+- for setter method
+```java
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Autowired
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // ...
+}
+```
+- for methods with arbitrary names
+```java
+public class MovieRecommender {
+
+    private MovieCatalog movieCatalog;
+
+    private CustomerPreferenceDao customerPreferenceDao;
+
+    @Autowired
+    public void prepare(MovieCatalog movieCatalog,
+            CustomerPreferenceDao customerPreferenceDao) {
+        this.movieCatalog = movieCatalog;
+        this.customerPreferenceDao = customerPreferenceDao;
+    }
+
+    // ...
+}
+```
+- for fields mix in constructor
+```java
+public class MovieRecommender {
+
+    private final CustomerPreferenceDao customerPreferenceDao;
+
+    @Autowired
+    private MovieCatalog movieCatalog;
+
+    @Autowired
+    public MovieRecommender(CustomerPreferenceDao customerPreferenceDao) {
+        this.customerPreferenceDao = customerPreferenceDao;
+    }
+
+    // ...
+}
+```
+- for field of array type or collections
+```java
+public class MovieRecommender {
+
+    @Autowired
+    private MovieCatalog[] movieCatalogs;
+
+    // ...
+}
+
+public class MovieRecommender {
+
+    private Set<MovieCatalog> movieCatalogs;
+
+    @Autowired
+    public void setMovieCatalogs(Set<MovieCatalog> movieCatalogs) {
+        this.movieCatalogs = movieCatalogs;
+    }
+
+    // ...
+}
+
+// for Map, key type must be String
+public class MovieRecommender {
+
+    private Map<String, MovieCatalog> movieCatalogs;
+
+    @Autowired
+    public void setMovieCatalogs(Map<String, MovieCatalog> movieCatalogs) {
+        this.movieCatalogs = movieCatalogs;
+    }
+
+    // ...
+}
+// use @Order or @Priority if sorted array
+```
+- not required
+```java
+// @Autowired treat methods and field required in default
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Autowired(required = false)
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // ...
+}
+```
+### 8.3 Optional and @Nullable
+```java
+public class SimpleMovieLister {
+
+    @Autowired
+    public void setMovieFinder(Optional<MovieFinder> movieFinder) {
+        ...
+    }
+}
+
+public class SimpleMovieLister {
+
+    @Autowired
+    public void setMovieFinder(@Nullable MovieFinder movieFinder) {
+        ...
+    }
+}
+```
+
+### 8.4 Fine-tuning Annotation-based Autowiring with `@Primary`
+```java
+@Configuration
+public class MovieConfiguration {
+
+    @Bean
+    @Primary
+    public MovieCatalog firstMovieCatalog() { ... }
+
+    @Bean
+    public MovieCatalog secondMovieCatalog() { ... }
+
+    // ...
+}
+
+public class MovieRecommender {
+
+    @Autowired
+    private MovieCatalog movieCatalog;
+
+    // ...
+}
+```
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean class="example.SimpleMovieCatalog" primary="true">
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean id="movieRecommender" class="example.MovieRecommender"/>
+
+</beans>
+```
+
+### 8.5 Fine-tuning Annotation-based Autowiring with Qualifiers
+```java
+// on beans field
+public class MovieRecommender {
+
+    @Autowired
+    @Qualifier("main")
+    private MovieCatalog movieCatalog;
+
+    // ...
+}
+// the bean name is considered a default qualifier value
+
+// on individual constructor
+public class MovieRecommender {
+
+    private MovieCatalog movieCatalog;
+
+    private CustomerPreferenceDao customerPreferenceDao;
+
+    @Autowired
+    public void prepare(@Qualifier("main") MovieCatalog movieCatalog,
+            CustomerPreferenceDao customerPreferenceDao) {
+        this.movieCatalog = movieCatalog;
+        this.customerPreferenceDao = customerPreferenceDao;
+    }
+
+    // ...
+}
+```
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier value="main"/> 
+
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier value="action"/> 
+
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean id="movieRecommender" class="example.MovieRecommender"/>
+
+</beans>
+```
+### 8.6 create own `Qualifier` annotation
+```java
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+@Qualifier
+public @interface Genre {
+
+    String value();
+}
+
+public class MovieRecommender {
+
+    @Autowired
+    @Genre("Action")
+    private MovieCatalog actionCatalog;
+
+    private MovieCatalog comedyCatalog;
+
+    @Autowired
+    public void setComedyCatalog(@Genre("Comedy") MovieCatalog comedyCatalog) {
+        this.comedyCatalog = comedyCatalog;
+    }
+
+    // ...
+}
+```
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier type="Genre" value="Action"/>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier type="example.Genre" value="Comedy"/>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean id="movieRecommender" class="example.MovieRecommender"/>
+
+</beans>
+```
+- using `@Qualifier` without value
+```java
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+@Qualifier
+public @interface Offline {
+
+}
+
+public class MovieRecommender {
+
+    @Autowired
+    @Offline 
+    private MovieCatalog offlineCatalog;
+
+    // ...
+}
+```
+```xml
+<bean class="example.SimpleMovieCatalog">
+    <qualifier type="Offline"/> 
+    <!-- inject any dependencies required by this bean -->
+</bean>
+```
+- replacement for value
+```java
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+@Qualifier
+public @interface MovieQualifier {
+
+    String genre();
+
+    Format format();
+}
+
+public enum Format {
+    VHS, DVD, BLURAY
+}
+
+public class MovieRecommender {
+
+    @Autowired
+    @MovieQualifier(format=Format.VHS, genre="Action")
+    private MovieCatalog actionVhsCatalog;
+
+    @Autowired
+    @MovieQualifier(format=Format.VHS, genre="Comedy")
+    private MovieCatalog comedyVhsCatalog;
+
+    @Autowired
+    @MovieQualifier(format=Format.DVD, genre="Action")
+    private MovieCatalog actionDvdCatalog;
+
+    @Autowired
+    @MovieQualifier(format=Format.BLURAY, genre="Comedy")
+    private MovieCatalog comedyBluRayCatalog;
+
+    // ...
+}
+```
+```xml
+<!-- avaliable the usage of <meta/> instead of <qualifier/> -->
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier type="MovieQualifier">
+            <attribute key="format" value="VHS"/>
+            <attribute key="genre" value="Action"/>
+        </qualifier>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier type="MovieQualifier">
+            <attribute key="format" value="VHS"/>
+            <attribute key="genre" value="Comedy"/>
+        </qualifier>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <meta key="format" value="DVD"/>
+        <meta key="genre" value="Action"/>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <meta key="format" value="BLURAY"/>
+        <meta key="genre" value="Comedy"/>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+</beans>
+```
+
+### 8.7 Using Generics as Autowiring Qualifiers
+```java
+// definition
+@Configuration
+public class MyConfiguration {
+
+    @Bean
+    public StringStore stringStore() {
+        return new StringStore();
+    }
+
+    @Bean
+    public IntegerStore integerStore() {
+        return new IntegerStore();
+    }
+}
+
+// usage
+@Autowired
+private Store<String> s1; // <String> qualifier, injects the stringStore bean
+
+@Autowired
+private Store<Integer> s2; // <Integer> qualifier, injects the integerStore bean
+
+// Inject all Store beans as long as they have an <Integer> generic
+// Store<String> beans will not appear in this list
+@Autowired
+private List<Store<Integer>> s;
+```
+
+
+
+
+
+
