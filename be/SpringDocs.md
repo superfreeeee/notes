@@ -841,7 +841,7 @@ public class InstantiationTracingBeanPostProcessor implements BeanPostProcessor 
 ```
 
 ### 7.3 Customizing Configuration Metadata with a BeanFactoryPostProcessor
-... be continue
+... to be continue in 1.8.2
 
 
 
@@ -1305,6 +1305,33 @@ private Store<Integer> s2; // <Integer> qualifier, injects the integerStore bean
 // Store<String> beans will not appear in this list
 @Autowired
 private List<Store<Integer>> s;
+```
+
+### 8.8 Using `CustomAutowireConfigurer`
+... to be continue in 1.9.6
+
+### 8.9 Injection with `@Resource`
+```java
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    // attribute indicate as bean name
+    @Resource(name="myMovieFinder") 
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+}
+
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Resource
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+}
 ```
 
 

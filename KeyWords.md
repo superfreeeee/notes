@@ -1,5 +1,41 @@
 # 重點名詞名詞總匯
 
+## 宏觀概念
+
+### 前端
+Abbreviation | Full name | Description
+-|-|-
+
+### 後端
+Abbreviation | Full name | Description
+-|-|-
+
+### 數據庫
+Abbreviation | Full name | Description
+-|-|-
+RDBMS | Relational Database Management System | 關係型數據庫
+CAP | - | CAP原則：Consistency, Availability, Partition tolerance
+
+#### CAP
+- Consistency(C)一致性：所有节点在同一时间具有相同的数据
+- Availability(A)可用性：保证每个请求不管成功或者失败都有响应
+- Partition tolerance(P)分區容忍性： 系统中任意信息的丢失或失败不会影响系统的继续运作
+
+*理論核心：最多同時滿足兩點*
+
+可區分成三種集群
+- CA: 单点集群，满足一致性，可用性的系统，通常在可扩展性上不太强大。
+- CP: 满足一致性，分区容忍性的系统，通常性能不是特别高。
+- AP: 满足可用性，分区容忍性的系统，通常可能对一致性要求低一些。
+
+
+### 通用
+Abbreviation | Full name | Description
+-|-|-
+
+
+---
+
 ## JavaEE
 Abbreviation|Full Name|Translation
 -|-|-
@@ -16,12 +52,12 @@ JDO | Java Data Object |
 RMI | Remote Method Invocation |
 RPC | Remote Procedure Call Protocol | 
 EJB | Enterprise JavaBean | 
-JSR | Java Specification Requests | Java規範提案 | 
+JSR | Java Specification Requests | Java規範提案
 CMP | 
 - Java Bean = Session Bean + Entity Bean + MessageDriver Bean
 - JSP
 - Servlet
----
+
 
 ## Spring
 Abbreviation|Full Name|Translation
@@ -38,7 +74,7 @@ SCA | Service Component Architecture |
 SDO |
 - SSH = Struts + Spring + Hibernate
 - SSH2 = Struts + Spring + Mybatis
----
+
 ## JVM
 Abbreviation|Full Name|Translation
 -|-|-
@@ -46,20 +82,21 @@ JNI | Java Native Interface |
 PDM | Parent Delegation Model | 
 JNDI | Java Naming and Directory Interface | 
 SPI | Service Provider Interface | 
----
+
 
 ## Maven
 Abbreviation|Full Name|Translation
 -|-|-
 
+
 ## Flask
 Abbreviation|Full Name|Translation
 -|-|-
 
----
 
 ## JavaScript
->### Http請求
+
+### Http請求
 - Ajax
 - Axios
 - fetch
@@ -69,18 +106,18 @@ Abbreviation|Full Name|Translation
 - Angular 前端集成框架
 - Node 中間層框js架
 - Express
----
+
 
 ## React
 Abbreviation|Full Name|Translation
 -|-|-
 HOC||高階組件
----
+
 
 ## Vue
 - Vue router
 - Vuex
----
+
 
 ## Http
 Abbreviation|Full Name|Translation
@@ -93,7 +130,7 @@ UDP | User Datagram Protocol |
 - Four-Way Wavehand 四次揮手
 - RFC
 - DDOS
----
+
 
 ## TCP/IP Flag
 Flag|Meaning|
@@ -104,19 +141,19 @@ PSH | Push
 RST | Reset
 SYN | Synchronization flag
 FIN | Final
----
+
 
 ## Docker
 Abbreviation|Full Name|Translation
 -|-|-
 
----
+
 
 ## UI框架
 - Vuetify
 - Ant Design
 - Element-UI
----
+
 
 ## 網路安全
 - csrf
@@ -130,6 +167,7 @@ Abbreviation|Full Name|Translation
 ## 數據可視化
 - echart
 - v-chart
+- highchart
 
 ## Linux
 - Debian
@@ -138,4 +176,4 @@ Abbreviation|Full Name|Translation
 - Ubuntu
 
 ## Others
-IOT Internet of Things
+IOT Internet of Things 物聯網

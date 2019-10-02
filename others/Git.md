@@ -37,3 +37,8 @@ $ git remote origin set-url [url]
 $ git remote rm origin
 $ git remote add origin [url]
 ```
+
+## 指令大全
+```
+$ git clone
+```

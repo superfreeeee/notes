@@ -36,8 +36,12 @@ Spring Framework Docs | https://docs.spring.io/spring/docs/current/spring-framew
 Spring Boot Docs | https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/
 Spring Boot RESTful api (swagger | https://www.cnblogs.com/paddix/p/8215245.html https://segmentfault.com/a/1190000014168432?utm_medium=referral&utm_source=tuicool
 Mybatis mapper not found solution | https://blog.csdn.net/qinxian20120/article/details/80255976
-Spring Boot 配置接口WebMvcConfigurer | https://blog.csdn.net/fmwind/article/details/81235401
+Spring Boot 配置接口WebMvcConfigurer | https://blog.csdn.net/fmwind/article/details/81235401 https://www.jianshu.com/p/77482f0b59e9 https://www.jianshu.com/p/4f2807a5468c
+WebMvcConfigurer 跨域請求 | https://blog.csdn.net/weixin_41141219/article/details/80924735 https://www.wandouip.com/t5i378611/ https://www.cnblogs.com/shihaiming/p/9567420.html
 Spring Security | https://blog.csdn.net/liushangzaibeijing/article/details/81220610
+Spring啟動過程 | https://blog.csdn.net/u011447614/article/details/82994126 https://www.jianshu.com/p/a26114302ca4 https://www.jianshu.com/p/280c7e720d0c
+Spring Boot啟動過程 | https://www.cnblogs.com/davidwang456/p/9172685.html https://www.jianshu.com/p/bfb637def68b
+spring boot class-path | https://blog.csdn.net/qingmengwuhen1/article/details/78683110
 
 ## Spring Boot Annotation
 target | address
@@ -59,7 +63,7 @@ target | address
 Vue + TpyeScript起手式 | https://segmentfault.com/a/1190000011744210?utm_medium=referral&utm_source=tuicool
 TypeScript | http://www.typescriptlang.org/docs/home.html https://www.tslang.cn/docs/handbook/variable-declarations.html https://typescript.bootcss.com/basic-types.html
 Vue封裝axis | https://blog.csdn.net/qq_39313596/article/details/82592809
-Vue封裝表單驗證 | https://www.cnblogs.com/bester-ace/articles/10292697.html
+Vue elementUI表單驗證 | https://www.cnblogs.com/bester-ace/articles/10292697.html
 關閉socks-client | https://www.cnblogs.com/fxwoniu/p/11579096.html
 Vuex模塊化 | https://segmentfault.com/a/1190000019924674
 Vue Router模塊化 | https://segmentfault.com/a/1190000017380236?utm_source=tag-newest
@@ -85,3 +89,5 @@ target | address
 target | address
 ---|---
 數據庫範式 | https://www.xuebuyuan.com/3232513.html
+MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html
+redis | 
