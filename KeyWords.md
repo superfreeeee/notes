@@ -15,6 +15,8 @@ Abbreviation | Full name | Description
 -|-|-
 RDBMS | Relational Database Management System | 關係型數據庫
 CAP | - | CAP原則：Consistency, Availability, Partition tolerance
+DDL | Data Define Language | 數據定義語言
+DML | Data Manipulate Language | 數據操作語言
 
 #### CAP
 - Consistency(C)一致性：所有节点在同一时间具有相同的数据
@@ -32,7 +34,7 @@ CAP | - | CAP原則：Consistency, Availability, Partition tolerance
 ### 通用
 Abbreviation | Full name | Description
 -|-|-
-
+||
 
 ---
 

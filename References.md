@@ -75,10 +75,19 @@ target | address
 元注解 | https://www.cnblogs.com/hyc-ana/p/9325618.html
 @Target | https://www.cnblogs.com/unknows/p/10261539.html
 
+## JavaScript儲備知識
+target | address
+---|---
+事件循環機制 | https://www.cnblogs.com/cangqinglang/p/8967268.html
+Promise機制 | https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544
+
 ## 設計模式
 target | address
 ---|---
 Proxy and CGLIB | https://www.cnblogs.com/liuboyuan/p/11157378.html
+Singleton | https://blog.csdn.net/stven_king/article/details/101759634?utm_source=app
+工廠模式 | https://blog.csdn.net/weixin_35985385/article/details/81430545
+Observer | https://blog.csdn.net/abudexiatian/article/details/100916663?utm_source=app
 
 ## 計算機圖形學
 target | address
@@ -88,6 +97,7 @@ target | address
 ## 數據庫
 target | address
 ---|---
-數據庫範式 | https://www.xuebuyuan.com/3232513.html
+數據庫範式 | https://www.xuebuyuan.com/3232513.html https://www.cnblogs.com/knowledgesea/p/3667395.html
 MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html
 redis | 
+SQL | https://www.w3school.com.cn/sql/index.asp
