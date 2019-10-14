@@ -78,8 +78,9 @@ target | address
 ## JavaScript儲備知識
 target | address
 ---|---
-事件循環機制 | https://www.cnblogs.com/cangqinglang/p/8967268.html
 Promise機制 | https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544
+事件循環機制 | https://www.cnblogs.com/cangqinglang/p/8967268.html
+V8引擎解析 | https://blog.csdn.net/swimming_in_it_/article/details/78869549
 
 ## 設計模式
 target | address
@@ -101,3 +102,16 @@ target | address
 MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html
 redis | 
 SQL | https://www.w3school.com.cn/sql/index.asp
+
+## 操作系統
+target | address
+---|---
+Windows句柄 | https://blog.csdn.net/wyx0224/article/details/83385168
+
+## 編譯原理
+target | address
+---|---
+
+
+
+

@@ -176,10 +176,47 @@ SELECT LastName AS Family, FirstName AS Name FROM Persons
 ```
 
 ### 5. JOIN
+```sql
+-- 多表查詢
+SELECT [columns] FROM [tables] WHERE [conditions]
+
+-- 內連接 INNER JOIN
+SELECT [columns] FROM [table1] INNER JOIN [table2] ON [conditions]
+-- 左連接 LEFT JOIN，即使右表不存在亦顯示
+SELECT [columns] FROM [table1] LEFT JOIN [tables] ON [conditions]
+-- 右連接 RIGHT JOIN，即使左表不存在亦顯示
+SELECT [columns] FROM [table1] RIGHT JOIN [tables] ON [conditions]
+-- 全連接 FULL JOIN，即使左/右表不存在亦顯示
+SELECT [columns] FROM [table1] FULL JOIN [tables] ON [conditions]
+```
+
+### 6. UNION
+```sql
+-- 列聯集（列數、數據類型相同，默認選取唯一值）
+SELECT [columns] FROM [table1]
+UNION
+SELECT [columns] FROM [table2]
+-- 選中重複值
+SELECT [columns] FROM [table1]
+UNION ALL
+SELECT [columns] FROM [table2]
+```
+
+### 7. SELECT INTO
+```sql
+-- 將列插入新表（用於創建表備份）
+SELECT [columns] INTO [table2] [IN databases2] FROM [table1]
 
 
+-- 實例
+SELECT Persons.LastName,Orders.OrderNo
+INTO Persons_Order_Backup
+FROM Persons
+INNER JOIN Orders
+ON Persons.Id_P=Orders.Id_P
+```
 
-### 100. CREATE
+### 8. CREATE
 - create database
 ```sql
 -- 創建數據庫

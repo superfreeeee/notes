@@ -1,6 +1,8 @@
 # JavaScript基礎
 
-## Promise
+## Event Loop 事件循環機制
+- JavaScript為非阻塞（單線程）腳本語言，`Web Worker`作為多線程替代技術
+## Promise 對象
 ```js
 let ajax = function(...args) {
   // ...
