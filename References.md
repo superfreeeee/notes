@@ -46,14 +46,14 @@ spring boot class-path | https://blog.csdn.net/qingmengwuhen1/article/details/78
 ## Spring Boot Annotation
 target | address
 ---|---
-- | https://blog.csdn.net/tuesdayma/article/details/81029539
+. | https://blog.csdn.net/tuesdayma/article/details/81029539
 Spring Boot Controller annotation of parameter | https://blog.csdn.net/weixin_38336658/article/details/80415399
 Spring Boot @Scope introduction | https://blog.csdn.net/weixin_32916879/article/details/81350968
 
 ## Spring Boot 開發實例
 target | address
 ---|---
-- | http://www.zuidaima.com/share/kspringboot编写RESTful服务实例-p1-s4.htm
+. | http://www.zuidaima.com/share/kspringboot编写RESTful服务实例-p1-s4.htm
 整合Spring Cloud + redis | http://www.zuidaima.com/share/3998036114230272.htm
 Spring Security  | http://www.zuidaima.com/share/4364636212399104.htm
 
@@ -93,7 +93,7 @@ Observer | https://blog.csdn.net/abudexiatian/article/details/100916663?utm_sour
 ## 計算機圖形學
 target | address
 ---|---
-- | https://www.cnblogs.com/keguniang/p/9630796.html
+. | https://www.cnblogs.com/keguniang/p/9630796.html
 
 ## 數據庫
 target | address
@@ -111,7 +111,4 @@ Windows句柄 | https://blog.csdn.net/wyx0224/article/details/83385168
 ## 編譯原理
 target | address
 ---|---
-
-
-
 
