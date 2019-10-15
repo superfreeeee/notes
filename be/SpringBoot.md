@@ -1,4 +1,4 @@
-# Spring學習筆記
+# Spring Framework核心 + SpringBoot學習筆記
 ## 重要概念
 - IOC 控制反轉
 - DI 依賴注入

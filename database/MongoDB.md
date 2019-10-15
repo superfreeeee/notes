@@ -12,12 +12,37 @@ index | index | 索引
 table joins | - | 表连接,MongoDB不支持
 primary key | primary key | 主键,MongoDB自动将_id字段设置为主键
 
-## commands
-command | description
+## 與RDBMS對應術語
+RDBMS | MongoDB
 -|-
-show dbs | 顯示數據庫列表
-db | 當前數據庫對象或集合
-use [db] | 連接到數據庫
+數據庫(database) | 數據庫
+表格(table) | 集合
+行(row) | 文檔
+列(column, field) | 字段
+表聯合 | 嵌入字段
+主健(primary key) | 主鍵(自帶 `_id` 作為主鍵)
+
+### 文檔 Document(行、單筆數據)
+```json
+{"column_name": "value", "column_name": "value"}
+```
+
+### 集合 (文檔組、table)
+```json
+{"site":"www.baidu.com"}
+{"site":"www.google.com","name":"Google"}
+{"site":"www.runoob.com","name":"菜鸟教程","num":5}
+```
+
+## commands
+```sh
+# 顯示數據庫列表
+show dbs
+# 當前數據庫對象或集合
+db
+# 連接到數據庫
+use [db]
+```
 
 ## 元數據
 namespace | description

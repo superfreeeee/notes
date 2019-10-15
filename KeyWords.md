@@ -5,10 +5,14 @@
 ### 前端
 Abbreviation | Full name | Description
 -|-|-
+JSON | 
+AJAX | 
+HTML | 
 
 ### 後端
 Abbreviation | Full name | Description
 -|-|-
+
 
 ### 數據庫
 Abbreviation | Full name | Description
@@ -17,6 +21,7 @@ RDBMS | Relational Database Management System | 關係型數據庫
 CAP | - | CAP原則：Consistency, Availability, Partition tolerance
 DDL | Data Define Language | 數據定義語言
 DML | Data Manipulate Language | 數據操作語言
+BSON | 
 
 #### CAP
 - Consistency(C)一致性：所有节点在同一时间具有相同的数据
@@ -36,7 +41,7 @@ Abbreviation | Full name | Description
 -|-|-
 ||
 
----
+# Recent notes
 
 ## JavaEE
 Abbreviation|Full Name|Translation
