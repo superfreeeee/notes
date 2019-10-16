@@ -1,6 +1,8 @@
 # Design Pattern
 
 ## Proxy代理模式
+
+### 實例
 ```java
 // dependency
 // Proxy.newProxyInstance
@@ -451,6 +453,8 @@ public class Client {
 
 ## Observer觀察者模式
 
+
+### 實例
 ```java
 // abstract classes
 abstract class Subject {
