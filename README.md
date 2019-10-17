@@ -1,6 +1,9 @@
 # Notes
 backup for notes
 
-# Commit message format
-- [date], [message]
-- for example: 19990101, init repository
+# Catogorys
+1. fe 
+2. be
+3. database
+4. web
+5. others
