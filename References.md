@@ -91,6 +91,11 @@ Singleton | https://blog.csdn.net/stven_king/article/details/101759634?utm_sourc
 工廠模式 | https://blog.csdn.net/weixin_35985385/article/details/81430545
 Observer | https://blog.csdn.net/abudexiatian/article/details/100916663?utm_source=app
 
+## Web服務器設計
+target | address
+---|---
+C/S、B/S | https://www.cnblogs.com/yan1/p/9693762.html
+
 # 3. 數據庫
 
 target | address
@@ -105,7 +110,7 @@ target | address
 ---|---
 OSI七層模型 | https://baike.baidu.com/item/%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B/1441391?fr=aladdin https://www.cnblogs.com/heitaoq/p/9152842.html
 淺談五層協議 | https://www.jianshu.com/p/e667d5512eb0
-http |
+http請求、響應 | https://www.cnblogs.com/haiyan123/p/7777924.html
 tcp |
 
 # 5. 算法

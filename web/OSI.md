@@ -21,6 +21,8 @@ Level | Desciption | Protocol
 數據鏈路層(MAC地址)) | 確定比特分組模式 | Ethernet(`[head(18Bytes) | data(46Bytes+)]`), head=MAC(48-bits`[廠商編號(24) | 網卡流水號(24)]`), ARP協議廣播
 物理層 | 物理連接手段
 
+- 最終數據包格式(單位Bytes): [乙太網頭(18)] | [IP頭(20)] | [UDP(8)/TCP頭(20)] | [數據包]
+
 # 相關協議  
   
 ## 1. 应用层  
