@@ -1,13 +1,22 @@
 # Spring Framework核心 + SpringBoot學習筆記
+
 ## 重要概念
+1. 核心
 - IOC 控制反轉
 - DI 依賴注入
-- AOP 切面編程
-- ApplicationContext 配置類，四種實現
+  - constructor-based 构造器注入(相关: @ConstructorProperties)
+  - setter-based setter注入
+  - property declaration 自动注入(相关: @Autowired, @Required)
+- 生命周期相关
+  - init-method 初始化回调(相关: @PostConstruct)
+  - destroy-method 关闭回调(相关: @ProDestroy)
+- AOP 切面編程（概念即可
+  - Scope Bean创建模式(Singleton, Prototype, Session, ...)对应Bean生存周期
+- ApplicationContext 配置类，四种实现(分为xml配置与注解配置)
   - FileSystemXmlApplicationContext
   - ClassPathXmlApplicationContext
   - XmlWebApplicationContext
-  - *AnnotationConfigApplicationContext（Springboot 以注釋配置）
+  - *AnnotationConfigApplicationContext（Springboot 以注解配置）
 
 ## 重要注釋
 ### Classify
@@ -42,7 +51,7 @@
 @Resource
 @Autowired
 
-// 4. Parameter in Controller
+// 4. SpringMVC: Decoration for Controller
 @RequestMapping(value="/path/{param}", method=RequestMethod.[type]) // type = [GET, POST, DELETE, PUT, ...]
   // Specific RequestMapping
   @GetMapping

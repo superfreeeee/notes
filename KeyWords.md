@@ -2,19 +2,19 @@
 
 ## 宏觀概念
 
-### 前端
+### 1. 前端
 Abbreviation | Full name | Description
 -|-|-
 JSON | 
 AJAX | 
 HTML | 
 
-### 後端
+### 2. 後端
 Abbreviation | Full name | Description
 -|-|-
 
 
-### 數據庫
+### 3. 數據庫
 Abbreviation | Full name | Description
 -|-|-
 RDBMS | Relational Database Management System | 關係型數據庫
@@ -22,6 +22,7 @@ CAP | - | CAP原則：Consistency, Availability, Partition tolerance
 DDL | Data Define Language | 數據定義語言
 DML | Data Manipulate Language | 數據操作語言
 BSON | 
+RRD | Round Robin Database | 
 
 #### CAP
 - Consistency(C)一致性：所有节点在同一时间具有相同的数据
@@ -35,8 +36,14 @@ BSON |
 - CP: 满足一致性，分区容忍性的系统，通常性能不是特别高。
 - AP: 满足可用性，分区容忍性的系统，通常可能对一致性要求低一些。
 
+### 4. Web
+Abbreviation | Full name | Description
+-|-|-
+OSI | Open System Interconnection | 通信系統七層模型
+HTTP |
+TCP |
 
-### 通用
+### 5. 其他
 Abbreviation | Full name | Description
 -|-|-
 ||

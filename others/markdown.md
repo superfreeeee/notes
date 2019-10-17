@@ -37,5 +37,5 @@ class JavaObject {}
 
 >>>>level 4
 
-![GITHUB](/Users/superfree/Documents/字號對應磅數.png "字號對應磅數")
+![替代文字](圖片路徑)
 照片

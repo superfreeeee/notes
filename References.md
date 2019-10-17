@@ -1,6 +1,6 @@
 # References
 
-# 前端
+# 1. 前端
 
 ## Vue
 target | address
@@ -17,6 +17,7 @@ Vue Router模塊化 | https://segmentfault.com/a/1190000017380236?utm_source=tag
 target | address
 ---|---
 React風格指南 | https://www.imooc.com/article/2535
+React項目架構 | https://blog.csdn.net/weixin_39939012/article/details/80962190 https://blog.csdn.net/uxiAD7442KMy1X86DtM3/article/details/79040042
 
 ## Node.js
 target | address
@@ -37,7 +38,7 @@ Promise機制 | https://www.liaoxuefeng.com/wiki/1022910821149312/10230244132765
 事件循環機制 | https://www.cnblogs.com/cangqinglang/p/8967268.html
 V8引擎解析 | https://blog.csdn.net/swimming_in_it_/article/details/78869549
 
-# 後端
+# 2. 後端
 
 ## 后端Spring
 target | address
@@ -90,7 +91,7 @@ Singleton | https://blog.csdn.net/stven_king/article/details/101759634?utm_sourc
 工廠模式 | https://blog.csdn.net/weixin_35985385/article/details/81430545
 Observer | https://blog.csdn.net/abudexiatian/article/details/100916663?utm_source=app
 
-# 數據庫
+# 3. 數據庫
 
 target | address
 ---|---
@@ -99,13 +100,15 @@ MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html
 redis | 
 SQL | https://www.w3school.com.cn/sql/index.asp
 
-# Web相關
+# 4. Web相關
 target | address
 ---|---
+OSI七層模型 | https://baike.baidu.com/item/%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B/1441391?fr=aladdin https://www.cnblogs.com/heitaoq/p/9152842.html
+淺談五層協議 | https://www.jianshu.com/p/e667d5512eb0
 http |
 tcp |
 
-# 算法
+# 5. 算法
 
 ## 源碼分析
 target | address
@@ -123,7 +126,7 @@ RSA原理2 | http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html
 DES原理 | https://blog.csdn.net/qq_27570955/article/details/52442092
 DES原理 | https://www.cnblogs.com/songwenlong/p/5944139.html
 
-# 其他
+# 6. 其他
 
 ## Unity
 target | address
