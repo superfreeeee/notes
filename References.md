@@ -76,6 +76,11 @@ target | address
 整合Spring Cloud + redis | http://www.zuidaima.com/share/3998036114230272.htm
 Spring Security  | http://www.zuidaima.com/share/4364636212399104.htm
 
+## 安全性
+target | address
+---|---
+Spring Security原理 | https://www.jianshu.com/p/a2d055dddfed
+
 ## Java基礎
 target | address
 ---|---
@@ -101,8 +106,8 @@ C/S、B/S | https://www.cnblogs.com/yan1/p/9693762.html
 target | address
 ---|---
 數據庫範式 | https://www.xuebuyuan.com/3232513.html https://www.cnblogs.com/knowledgesea/p/3667395.html
-MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html
-redis | 
+MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html https://blog.csdn.net/u012702547/article/details/83275695?utm_source=app
+redis | https://blog.csdn.net/joker_pumpkin/article/details/90543464?utm_source=app https://blog.csdn.net/qq_37209293/article/details/88294792?utm_source=app
 SQL | https://www.w3school.com.cn/sql/index.asp
 
 # 4. Web相關
@@ -110,8 +115,17 @@ target | address
 ---|---
 OSI七層模型 | https://baike.baidu.com/item/%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B/1441391?fr=aladdin https://www.cnblogs.com/heitaoq/p/9152842.html
 淺談五層協議 | https://www.jianshu.com/p/e667d5512eb0
-http請求、響應 | https://www.cnblogs.com/haiyan123/p/7777924.html
 tcp |
+
+## HTTP/HTTPS
+target | address
+---|---
+http請求、響應 | https://www.cnblogs.com/haiyan123/p/7777924.html
+HTTP報文解析 | https://blog.csdn.net/yutiab69/article/details/82869239 https://blog.csdn.net/a_fool_program_ape/article/details/81748544
+HTTP多種認證(胕Basic,Digest) | https://www.jianshu.com/p/18fb07f2f65e
+HTTP Basic | https://blog.csdn.net/yhb241/article/details/80646485 https://www.cnblogs.com/xiaoxiaotank/p/11009796.html
+HTTP Digest | https://blog.csdn.net/gnnulzy/article/details/79822354 https://www.cnblogs.com/xiaoxiaotank/p/11078571.html
+HTTP,HTTPS差異 | https://www.cnblogs.com/dreamingbaobei/p/9801418.html 
 
 # 5. 算法
 
