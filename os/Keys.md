@@ -2,4 +2,9 @@
 
 Abbreviation | Full Name | Description
 -|-|-
-IOT Internet of Things 物聯網
+
+## Linux
+- Debian
+- Fedora
+- CentOS
+- Ubuntu

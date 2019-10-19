@@ -1,5 +1,6 @@
 # HTTP 協議
 - 默認端口號: 80
+
 ## 特點
 - 基於TCP/IP的短連接
 - 簡單，縮減響應服務器規模
@@ -62,8 +63,6 @@ CONNECT | 用於代理服務器
 OPTION | 請求選項信息
 TRACE | 進行環迴測試請求報文
 PATCH | ？
-
-- `GET`、`HEAD`、`POST`、`PUT`、`DELETE`、`CONNECT`、`OPTIONS`、`TRACE`、`PATCH`
 
 #### Request-Header 請求頭域
 Type | Header | Description
@@ -196,7 +195,7 @@ zzzzzz | Key1 | Value1
 - AWS Signature
 - HTTPS
 
-### HTTP Basic Authentication
+### HTTP Basic Authentication 基本認證
 - 工作流程：
 1. 客戶端請求->：客戶端發送請求
 2. 服務器響應<-：返回 `401:Unauthorized` + `(Header) WWW-Authenticate: Basic realm="My realm"(安全域字符串)`
@@ -211,17 +210,34 @@ zzzzzz | Key1 | Value1
 - 工作流程：
 1. 客戶端請求->：客戶端發送請求
 2. 服務器響應<-：返回 `Digest challenge` (摘要盤問) `401:Unauthorized` + `(Header) WWW-Authenticate: Digest realm="Restricted area"(安全域字符串),qop="auth",nonce="123456",opaqe="123456"`
-3. 客戶端請求->：附帶帳號密碼信息，`(Header) Authorization: Basic xxxxxxxxxxxxx`
+3. 客戶端請求->：發送 `Digest Response` (摘要響應) 附帶帳號密碼信息，`(Header) Authorization: Digest xxxxxxxxxxxxx`
 
-#### Digest Challenge 參數
+- 相對於基本認證的改進
+1. 絕不通過明文發送密碼
+2. 有效防止惡意用戶重放攻擊
+3. 防止對報文內容的篡改
+
+#### Digest Challenge 摘要盤問參數
 Key | Necessary | Meaning
 -|-|-
-realm (領域) | NOT NULL | 
-nonce (現時) | NOT NULL | 
-stale |  | 
-opaque (不透明體) | NOT NULL | 
-algorithm (算法) |  | 
-qop (保護質量) | NOT NULL | 
+realm (領域) | NOT NULL | 鑑別SIP消息，通常設置為域名
+nonce (現時) | NOT NULL | 摘要盤問附帶的標示，有限生命期且唯一標示
+stale |  | 在nonce值不合法、摘要合法的時候標示為 `TRUE`，並期望客戶端加密重發，否則表示用戶名、口令非法
+opaque (不透明體) | NOT NULL | 不透明的數據字符串？
+algorithm (算法) |  | 用來計算hash值的算法，目前只支持MD5
+qop (保護質量) | NOT NULL | 保護方案，`auth` 進行身份驗查，`auth-init` 在身份驗查外進行完整保護
+
+### Digest Response
+Key | Meaning
+-|-
+username | 用戶名稱
+realm | 與摘要盤問的 realm 相同
+nonce | 與摘要盤問的 nonce 相同，限定生命期從而防止重播攻擊
+qop | 客戶端選擇的保護攻擊
+nc | 對給定 nonce 值進行計數，防止重複請求
+response | 用戶口令，使用MD5雜湊算法生成
+cnonce | 供雙方查驗身份，並提供信息安全性和完整性保護
+url | 包含客戶端想訪問的URL
 
 ### OAuth2.0 Authentication
 

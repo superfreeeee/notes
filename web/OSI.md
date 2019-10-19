@@ -1,6 +1,6 @@
 # OSI 七層模型  
   
-![OSI model](../img/七層模型結構圖.jpg)  
+![OSI model](./img/七層模型結構圖.jpg)  
   
 Level | Desciption | Protocol / Format  
 -|-|-  

@@ -37,6 +37,7 @@ target | address
 Promise機制 | https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544
 事件循環機制 | https://www.cnblogs.com/cangqinglang/p/8967268.html
 V8引擎解析 | https://blog.csdn.net/swimming_in_it_/article/details/78869549
+Babel官方 | https://www.babeljs.cn/
 
 # 2. 後端
 
@@ -109,6 +110,7 @@ target | address
 MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html https://blog.csdn.net/u012702547/article/details/83275695?utm_source=app
 redis | https://blog.csdn.net/joker_pumpkin/article/details/90543464?utm_source=app https://blog.csdn.net/qq_37209293/article/details/88294792?utm_source=app
 SQL | https://www.w3school.com.cn/sql/index.asp
+rrdtool | https://baike.baidu.com/item/rrdtool/6051596?fr=aladdin
 
 # 4. Web相關
 target | address
@@ -117,7 +119,7 @@ OSI七層模型 | https://baike.baidu.com/item/%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E
 淺談五層協議 | https://www.jianshu.com/p/e667d5512eb0
 tcp |
 
-## HTTP/HTTPS
+## 應用層協議
 target | address
 ---|---
 http請求、響應 | https://www.cnblogs.com/haiyan123/p/7777924.html
@@ -126,6 +128,7 @@ HTTP多種認證(胕Basic,Digest) | https://www.jianshu.com/p/18fb07f2f65e
 HTTP Basic | https://blog.csdn.net/yhb241/article/details/80646485 https://www.cnblogs.com/xiaoxiaotank/p/11009796.html
 HTTP Digest | https://blog.csdn.net/gnnulzy/article/details/79822354 https://www.cnblogs.com/xiaoxiaotank/p/11078571.html
 HTTP,HTTPS差異 | https://www.cnblogs.com/dreamingbaobei/p/9801418.html 
+SNMP協議 | https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%8D%8F%E8%AE%AE/2986113?fromtitle=SNMP&fromid=133378&fr=aladdin
 
 # 5. 算法
 

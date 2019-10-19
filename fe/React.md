@@ -1,4 +1,8 @@
 # React學習筆記
+
+HOC
+Redux
+
 ## React組件組成
 ```html
 <Clock className='board'/>
