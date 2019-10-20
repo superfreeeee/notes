@@ -1,7 +1,7 @@
 # Notes
 backup for notes
 
-# Catogorys
+# Catogories
 1. fe 
 2. be
 3. database

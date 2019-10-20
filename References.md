@@ -38,6 +38,7 @@ Promise機制 | https://www.liaoxuefeng.com/wiki/1022910821149312/10230244132765
 事件循環機制 | https://www.cnblogs.com/cangqinglang/p/8967268.html
 V8引擎解析 | https://blog.csdn.net/swimming_in_it_/article/details/78869549
 Babel官方 | https://www.babeljs.cn/
+JavaScript原型鏈 | https://www.jianshu.com/p/686b61c4a43d https://www.jianshu.com/p/be7c95714586
 
 # 2. 後端
 
