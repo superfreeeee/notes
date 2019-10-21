@@ -1,6 +1,6 @@
 # 重點概念 / 名詞
 
-Abbreviation | Full name | Description
+Abbreviation | Full Name | Translation | Description
 -|-|-
 RDBMS | Relational Database Management System | 關係型數據庫
 CAP | - | CAP原則：Consistency, Availability, Partition tolerance

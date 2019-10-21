@@ -1,13 +1,13 @@
 # 重點概念 / 名詞
 
-Abbreviation | Full Name | Description
+Abbreviation | Full Name | Translation | Description
 -|-|-
 C/S | Client / Server | 客戶機/服務器模式，基於內部網絡
 B/S | Browser / Server | 瀏覽器/服務器模式，減低客戶端成本
 
 
 ## JavaEE
-Abbreviation | Full Name | Description
+Abbreviation | Full Name | Translation | Description
 -|-|-
 JMM | Java Memory Model | 
 JMX | Java Management Extension | 
@@ -30,7 +30,7 @@ CMP |
 
 
 ## Spring
-Abbreviation | Full Name | Description
+Abbreviation | Full Name | Translation | Description
 -|-|-
 IOC | Inversion of Controll | 控制反轉
 DI | Dependency Injection | 依賴注入
@@ -46,7 +46,7 @@ SDO |
 - SSH2 = Struts + Spring + Mybatis
 
 ## JVM
-Abbreviation | Full Name | Description
+Abbreviation | Full Name | Translation | Description
 -|-|-
 JNI | Java Native Interface | 
 PDM | Parent Delegation Model | 

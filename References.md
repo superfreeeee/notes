@@ -12,6 +12,7 @@ Vue elementUI表單驗證 | https://www.cnblogs.com/bester-ace/articles/10292697
 關閉socks-client | https://www.cnblogs.com/fxwoniu/p/11579096.html
 Vuex模塊化 | https://segmentfault.com/a/1190000019924674
 Vue Router模塊化 | https://segmentfault.com/a/1190000017380236?utm_source=tag-newest
+Vue & iframe | https://blog.csdn.net/github_37320188/article/details/82760687
 
 ## React
 target | address
@@ -39,6 +40,11 @@ Promise機制 | https://www.liaoxuefeng.com/wiki/1022910821149312/10230244132765
 V8引擎解析 | https://blog.csdn.net/swimming_in_it_/article/details/78869549
 Babel官方 | https://www.babeljs.cn/
 JavaScript原型鏈 | https://www.jianshu.com/p/686b61c4a43d https://www.jianshu.com/p/be7c95714586
+
+## 動畫相關
+target | address
+---|---
+js動畫庫 | https://blog.csdn.net/VhWfR2u02Q/article/details/79987345
 
 # 2. 後端
 
@@ -119,6 +125,9 @@ target | address
 OSI七層模型 | https://baike.baidu.com/item/%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B/1441391?fr=aladdin https://www.cnblogs.com/heitaoq/p/9152842.html
 淺談五層協議 | https://www.jianshu.com/p/e667d5512eb0
 tcp |
+comet | https://blog.csdn.net/RheaWang/article/details/74738884 https://www.ibm.com/developerworks/cn/web/wa-lo-comet/#fig001
+SPA vs MPA | https://www.cnblogs.com/yangAL/p/10616604.html
+
 
 ## 應用層協議
 target | address
@@ -130,6 +139,7 @@ HTTP Basic | https://blog.csdn.net/yhb241/article/details/80646485 https://www.c
 HTTP Digest | https://blog.csdn.net/gnnulzy/article/details/79822354 https://www.cnblogs.com/xiaoxiaotank/p/11078571.html
 HTTP,HTTPS差異 | https://www.cnblogs.com/dreamingbaobei/p/9801418.html 
 SNMP協議 | https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%8D%8F%E8%AE%AE/2986113?fromtitle=SNMP&fromid=133378&fr=aladdin
+WebSocket原理 | https://www.jianshu.com/p/ac74620333e7 https://baike.baidu.com/item/WebSocket/1953845?fr=aladdin&ivk_sa=1022817p
 
 # 5. 算法
 
