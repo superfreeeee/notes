@@ -35,11 +35,19 @@ canvas簡單教學 | https://www.cnblogs.com/wertantan/p/10159570.html
 ## JavaScript儲備知識
 target | address
 ---|---
+ES6基礎(重要！！) | http://caibaojian.com/es6/
 Promise機制 | https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544
 事件循環機制 | https://www.cnblogs.com/cangqinglang/p/8967268.html
 V8引擎解析 | https://blog.csdn.net/swimming_in_it_/article/details/78869549
-Babel官方 | https://www.babeljs.cn/
 JavaScript原型鏈 | https://www.jianshu.com/p/686b61c4a43d https://www.jianshu.com/p/be7c95714586
+ES6箭頭函數 | https://blog.csdn.net/github_38851471/article/details/79446722
+ES6 module | https://www.cnblogs.com/ariel-zhang/p/7127714.html https://www.cnblogs.com/Leo_wl/p/5616043.html
+
+## 前端第三方工具庫
+target | address
+---|---
+Babel官方 | https://www.babeljs.cn/
+webpack | https://www.webpackjs.com/
 
 ## 動畫相關
 target | address
