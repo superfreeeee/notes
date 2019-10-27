@@ -1,12 +1,12 @@
 # 重點概念 / 名詞
 
 Abbreviation | Full Name | Translation | Description
--|-|-
+-|-|-|-
 RDBMS | Relational Database Management System | 關係型數據庫
 CAP | - | CAP原則：Consistency, Availability, Partition tolerance
 DDL | Data Define Language | 數據定義語言
 DML | Data Manipulate Language | 數據操作語言
-BSON | 
+BSON | Binary JSON | 二進制JSON格式
 RRD | Round Robin Database | 
 
 ## CAP

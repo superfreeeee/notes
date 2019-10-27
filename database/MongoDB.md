@@ -34,15 +34,71 @@ RDBMS | MongoDB
 {"site":"www.runoob.com","name":"菜鸟教程","num":5}
 ```
 
-## commands
+## commands(使用js腳本)
 ```sh
 # 顯示數據庫列表
-show dbs
+$ show dbs
 # 當前數據庫對象或集合
-db
+$ db
 # 連接到數據庫
-use [db]
+$ use [db]
+
+# 顯示數據庫
+$ show dbs
+
+# 插入數據(增)
+$ db.[collection].insert({[key]: [value]})
+$ db.[collection].insertMany([{[key1]: [value1]}, {}[key2]: [value2], {[key3]: [value3]}])
+
+# 查詢數據(查)
+$ db.[colleciton].findOne()
+$ db.[colleciton].find()
+
+# 修改數據(改)
+$ db.[collection].update({sample}, {target})  # sample表示要更改數據, target表示更新後數據
+
+# 刪除操作(刪)
+$ db.[collection].remove({sample})
 ```
+
+## 基本數據格式
+- 以BSON作為文檔數據存儲和網路傳輸格式
+
+### Number 數字
+- 默認為64位浮點數
+```sh
+$ db.sang_collec.insert({x: 3.1415926})
+$ db.sang_collec.insert({x: 3})
+```
+- 整數使用 `NumberInt` 和 `NumberLong`
+```sh
+$ db.sang_collec.insert({x: NumberInt(10)})
+$ db.sang_collec.insert({x: NumberLong(12)})
+```
+
+### String 字符串
+- 直接存儲
+```sh
+$ db.sang_collec.insert({x: "hello world"})
+```
+
+### 正則表達式(同js)
+- 主要用於查找(find)
+```
+$ db.sang_collec.find({x:/^(hello)(.[a-zA-Z0-9])+/i})
+```
+
+### Array 數組
+```sh
+$ db.sang_collec.insert({x:[1,2,3,4,new Date()]})
+```
+
+### Date 日期
+```sh
+$ db.sang_collec.insert({x:new Date()})
+```
+
+### Inner document 內嵌文檔
 
 ## 元數據
 namespace | description
