@@ -7,6 +7,7 @@ SIP | Session Initiation Protocol | 會話發起協議 | 用於建立服務器�
 comet |  | 
 SPA |  | 
 MPA |  | 
+SEO | Search Engine Optimization | 搜索引擎優化
 Socket | 
 WebSocket | 
 
@@ -16,6 +17,7 @@ Abbreviation | Full Name | Translation | Description
 -|-|-|-
 HTTP (應用層) | Hypertext Transfer Protocol | 超文本傳輸協議 | 客戶端-服務器間通訊協議
 HTTPS (應用層) | Hypertext Transfer Protocol over Secure Socket Layer | HTTP over SSL
+URL | Uniform Resource Locator's | 通一資源標示符
 SSL | Secure Sockets Layer | 安全套接层
 CA | Certificate Authority | 證書頒發機構 | 負責頒發電子憑證的第三方機構
 HTTP Basic | . | HTTP 基本認證

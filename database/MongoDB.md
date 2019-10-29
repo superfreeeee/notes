@@ -1,5 +1,4 @@
-# MongoDB
-- 分佈式文件存儲數據庫
+# MongoDB：分佈式文件存儲數據庫
 
 ## 與SQL對照
 SQL | MongoDB | description
@@ -29,12 +28,13 @@ RDBMS | MongoDB
 
 ### 集合 (文檔組、table)
 ```json
-{"site":"www.baidu.com"}
-{"site":"www.google.com","name":"Google"}
+{"site":"www.baidu.com"},
+{"site":"www.google.com","name":"Google"},
 {"site":"www.runoob.com","name":"菜鸟教程","num":5}
+
 ```
 
-## commands(使用js腳本)
+## 基本操作(使用js腳本)
 ```sh
 # 顯示數據庫列表
 $ show dbs
@@ -99,6 +99,77 @@ $ db.sang_collec.insert({x:new Date()})
 ```
 
 ### Inner document 內嵌文檔
+```sh
+$ db.sang_collect.insert({name:"三国演义",author:{name:"罗贯中",age:99}});
+```
+
+### ObjectId
+- 默認 `_id` 鍵
+- 12字節, 24個十六進制數 `[時間戳(8)][機器碼(6)][進程id(4)][計數器(6)]`
+
+### 其他
+- 二進制數據
+- js代碼
+
+## 深入操作詳解
+
+### 文檔替換
+- 替換前
+```json
+{
+  "_id" : ObjectId("59f005402844ff254a1b68f6"),
+  "name" : "三国演义",
+  "authorName" : "罗贯中",
+  "authorGender" : "男",
+  "authorAge" : 99.0
+}
+```
+- 文檔替換操作
+```js
+$ var book=db.sang_collect.findOne({name:"三国演义"})
+$ book.author={name:book.authorName,gender:book.authorGender,age:book.authorAge}
+$ delete book.author
+$ delete book.authorName
+$ delete book.authorGender
+$ delete book.authorAge
+$ db.sang_collect.update({name:"三国演义"},book)
+```
+- 替換後
+```json
+{
+  "_id" : ObjectId("59f005402844ff254a1b68f6"),
+  "name" : "三国演义",
+  "author" : {
+    "name" : "罗贯中",
+    "gender" : "男",
+    "age" : 99.0
+  }
+}
+```
+
+### 全部修改
+- update默認只修改第一個匹配數據
+```json
+{ "_id" : ObjectId("59f00d4a2844ff254a1b68f7"), "x" : 1 }
+{ "_id" : ObjectId("59f00d4a2844ff254a1b68f8"), "x" : 1 }
+{ "_id" : ObjectId("59f00d4a2844ff254a1b68f9"), "x" : 1 }
+{ "_id" : ObjectId("59f00d4a2844ff254a1b68fa"), "x" : 2 }
+```
+```js
+$ db.sang_collect.update({x:1},{x:99})
+```
+```json
+{ "_id" : ObjectId("59f00d4a2844ff254a1b68f7"), "x" : 99 }
+{ "_id" : ObjectId("59f00d4a2844ff254a1b68f8"), "x" : 1 }
+{ "_id" : ObjectId("59f00d4a2844ff254a1b68f9"), "x" : 1 }
+{ "_id" : ObjectId("59f00d4a2844ff254a1b68fa"), "x" : 2 }
+```
+
+- 替換全部數據
+```js
+$ db.sang_collect.update({x:1},{$set:{x:99}},false,true)
+// 參數二表示set修改器，參數三表示未找到時是否作為新數據插入，參數四表示是否改動所有匹配文檔
+```
 
 ## 元數據
 namespace | description

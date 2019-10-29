@@ -66,3 +66,53 @@ do {
 
 - 所有變量都代表計算機中某一個寄存器
 - `一般變量`存`值`，`指針變量`存`地址`
+
+## 結構體
+
+### 定義
+```c
+// 使用struct
+struct [tag/new_type_name] {
+  // members
+}[var_def] = {[members]}?;
+
+// 使用typedef
+typedef struct {
+  // members
+}[new_type_name]
+```
+```c
+struct Point {
+  int x;
+  int y;
+}p1 = {0, 0}, p2;  // 可在聲明時初始化
+struct Point p3 = {10, 10}, *p4;
+
+typedef struct {
+  int id;
+  char name[20];
+}Person;
+Person p1 = {181250003, "略略略"};
+
+struct Node {
+  int id;
+  Node* next;
+};
+```
+
+### 位域
+```c
+// IEEEFloat佔四個字節32位
+struct IEEEFloat {
+  int sign:1;
+  int exp:8;
+  int frac:23;
+}
+
+// 含空域
+struct InnerNull {
+  int part1:10;
+  int :4;
+  int part2:22;
+}
+```
