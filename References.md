@@ -123,7 +123,7 @@ target | address
 ---|---
 數據庫範式 | https://www.xuebuyuan.com/3232513.html https://www.cnblogs.com/knowledgesea/p/3667395.html
 MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html https://blog.csdn.net/u012702547/article/details/83275695?utm_source=app
-redis | https://blog.csdn.net/joker_pumpkin/article/details/90543464?utm_source=app https://blog.csdn.net/qq_37209293/article/details/88294792?utm_source=app
+redis | https://blog.csdn.net/joker_pumpkin/article/details/90543464?utm_source=app https://blog.csdn.net/qq_37209293/article/details/88294792?utm_source=app https://www.runoob.com/redis/redis-tutorial.html
 SQL | https://www.w3school.com.cn/sql/index.asp
 rrdtool | https://baike.baidu.com/item/rrdtool/6051596?fr=aladdin
 
@@ -168,6 +168,11 @@ DES原理 | https://blog.csdn.net/qq_27570955/article/details/52442092
 DES原理 | https://www.cnblogs.com/songwenlong/p/5944139.html
 
 # 6. 其他
+
+## 協議
+target | address
+---|---
+五种开源协议的比较 | http://www.ha97.com/833.html
 
 ## Unity
 target | address
