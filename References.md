@@ -117,13 +117,18 @@ target | address
 ---|---
 C/S、B/S | https://www.cnblogs.com/yan1/p/9693762.html
 
+## Java第三方輔助類庫
+target | address
+---|---
+Lombok簡單解說 | https://mp.weixin.qq.com/s/-4W5-fOK0sGSaNBktXA-YQ
+
 # 3. 數據庫
 
 target | address
 ---|---
 數據庫範式 | https://www.xuebuyuan.com/3232513.html https://www.cnblogs.com/knowledgesea/p/3667395.html
 MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html https://blog.csdn.net/u012702547/article/details/83275695?utm_source=app
-redis | https://blog.csdn.net/joker_pumpkin/article/details/90543464?utm_source=app https://blog.csdn.net/qq_37209293/article/details/88294792?utm_source=app https://www.runoob.com/redis/redis-tutorial.html
+redis | https://www.runoob.com/redis/ https://blog.csdn.net/joker_pumpkin/article/details/90543464?utm_source=app https://blog.csdn.net/qq_37209293/article/details/88294792?utm_source=appredis-tutorial.html https://blog.csdn.net/aa1215018028/article/details/83096159?utm_source=app
 SQL | https://www.w3school.com.cn/sql/index.asp
 rrdtool | https://baike.baidu.com/item/rrdtool/6051596?fr=aladdin
 
