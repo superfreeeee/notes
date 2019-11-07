@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - SingletonEnum",
+      "request": "launch",
+      "mainClass": "standardsimulation.SingletonEnum",
+      "projectName": "singleton_be7b2312"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - SingletonSync",
+      "request": "launch",
+      "mainClass": "standardsimulation.SingletonSync",
+      "projectName": "singleton_be7b2312"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - SingletonBasic",
+      "request": "launch",
+      "mainClass": "standardsimulation.SingletonBasic",
+      "projectName": "singleton_be7b2312"
+    }
+  ]
+}

@@ -1,5 +1,158 @@
 # Design Pattern
 
+## Creational Pattern 創建型模式
+
+### 1. Abstract Factory 抽象工廠模式
+![Abstract Factory](./img/abstractfactory.jpeg)
+<!-- ![Abstract Factory](./img/abstractfactory-2.jpeg) -->
+- 核心：客戶端透過抽象工廠接口創建產品
+- 實現要點：
+1. 面對抽象工廠接口編程，每個產品組合組成一個工廠類，一個產品對應工廠的一個創建方法(工廠方法)
+
+### 2. Builder 建造者模式(生成器、生產者)
+![Builder](./img/builder.jpeg)
+- 核心：將複雜產品的創建過程委託給一個創建者對象，客戶端透過創建者接口構造福雜對象
+- 實現要點：
+1. Builder可為產品內部類，提供由Builder創建產品的構造方法
+2. 透過Builder類的build方法獲得最終對象
+
+### 3. Factory Method 工廠方法模式
+![Factory Method](./img/factorymethod.jpeg)
+- 核心：透過工廠方法創建對象，使創建目標與客戶端解耦
+- 實現要點：
+1. 客戶端面對產品抽象接口編程，使工廠方法實際創建目標對客戶端不可見，高度解耦
+2. 特殊型態：靜態工廠方法，擺脫構造器重載取而代之使用類靜態方法具體化構造參數
+
+### 4. Prototype 原型模式
+![Prototype](./img/prototype.jpeg)
+- 核心：由原型實例確定創建產品的種類，並通過拷貝創造新的產品對象
+- 實現要點：
+1. 有一個存放所有原型對象的管理池(Manager)，客戶端只透過Manager獲得新對象
+2. 抹去類型信息(類太多或是累太複雜時亦同)，客戶端透過標記確定類型(字符串)
+
+### 5. Singleton 單例模式(單件)
+![Singleton](./img/singleton.jpeg)
+- 核心：程序運行時只存在一個或有限個實例對象
+- 實現要點：
+1. 注意線程安全
+2. 延遲初始化的選擇性(lazy initialization)
+3. 推薦使用枚舉ENUM
+
+## Structural Pattern 結構型模式
+
+### 1. Adapter 適配器模式
+![Adapter](./img/adapter.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 2. Bridge 橋接模式
+![Bridge](./img/bridge.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 3. Composite 組合模式(組成)
+![Composite](./img/composite.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 4. Decorator 裝飾器模式
+![Decorator](./img/decorator.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 5. Facade 外觀模式
+![Facade](./img/facade.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 6. Flyweight 享元模式
+![Flyweight](./img/flyweight.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 7. Proxy 代理模式
+![Proxy](./img/proxy.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+## Behavioral Pattern 行為型模式
+
+### 1. Chain of Responsibility 職責鍊模式
+![Chain of Responsibility](./img/chainofresponsibility.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 2. Command 命令模式
+![Command](./img/command.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 3. Interpreter 解釋器模式
+![Interpreter](./img/interpreter.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 4. Iterator 迭代器模式
+![Iterator](./img/iterator.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 5. Mediator 中介者模式
+![Mediator](./img/mediator.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 6. Memento 備忘錄模式
+![Memento](./img/memento.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 7. Observer 觀察者模式
+![Observer](./img/observer.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 8. State 狀態模式
+![State](./img/state.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 9. Strategy 模式
+![Strategy](./img/strategy.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 10. Template Method 模板方法模式
+![Template Method](./img/templatemethod.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+### 11. Visitor 訪問者模式
+![Visitor](./img/visitor.jpeg)
+- 核心：
+- 實現要點：
+1. 
+
+
+---
+# Old Notes
 ## Proxy代理模式
 
 ### 實例

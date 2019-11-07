@@ -107,10 +107,12 @@ target | address
 ## 設計模式
 target | address
 ---|---
+工廠模式 | https://blog.csdn.net/weixin_35985385/article/details/81430545 https://www.cnblogs.com/cxydczzl/p/9597223.html
+Builder | https://m.2cto.com/kf/201808/772333.html 
 Proxy and CGLIB | https://www.cnblogs.com/liuboyuan/p/11157378.html
 Singleton | https://blog.csdn.net/stven_king/article/details/101759634?utm_source=app
-工廠模式 | https://blog.csdn.net/weixin_35985385/article/details/81430545
 Observer | https://blog.csdn.net/abudexiatian/article/details/100916663?utm_source=app
+
 
 ## Web服務器設計
 target | address
@@ -178,6 +180,7 @@ DES原理 | https://www.cnblogs.com/songwenlong/p/5944139.html
 target | address
 ---|---
 五种开源协议的比较 | http://www.ha97.com/833.html
+Rust教程 | https://www.twle.cn/c/yufei/rust/rust-basic-index.html https://www.yiibai.com/rust/rust_instro.html
 
 ## Unity
 target | address
@@ -187,7 +190,8 @@ target | address
 ## 計算機圖形學
 target | address
 ---|---
-. | https://www.cnblogs.com/keguniang/p/9630796.html
+. | https://www.cnblogs.com/keguniang/p/9630796.html https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/279486?fr=aladdin
+OpenGL | https://baike.baidu.com/item/OpenGL/238984?fr=aladdin https://blog.csdn.net/ZLP_CSDN/article/details/84593427
 
 ## 操作系統
 target | address

@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - MazeGameWithFactoryMethod",
+      "request": "launch",
+      "mainClass": "MazeGameWithFactoryMethod",
+      "projectName": "DesignPattern_6b2acadf"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - MazeGameWithFactory",
+      "request": "launch",
+      "mainClass": "MazeGameWithFactory",
+      "projectName": "DesignPattern_6b2acadf"
+    }
+  ]
+}

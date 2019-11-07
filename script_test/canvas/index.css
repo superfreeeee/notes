@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+}
+
+.wrapper {
+  width:760px; 
+  height: 760px; 
+  margin: 40px auto 0; 
+  background-color: rgba(255, 224, 123, 0.849); 
+  border: black 4px solid
+}
