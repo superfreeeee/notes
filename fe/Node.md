@@ -50,7 +50,7 @@ console.log(data.toString());
 ```
 
 #### `fs.readFile('<file_name>', function(err, data))`
-- 異步讀取文件，失敗信息作為第一個參數
+- 異步讀取文件，讀取後觸發回調函數，失敗信息作為第一個參數
 ```js
 var fs = require('fs')
 fs.readFile('input.txt', function(err, data) {
@@ -62,6 +62,16 @@ fs.readFile('input.txt', function(err, data) {
 })
 console.log('running end')
 ```
+
+#### `fs.createReadStream(filename)`
+- 對文件建立讀取流
+
+#### `fs.createWriteStream(filename)`
+- 對文件建立寫入流
+
+#### `fs.open(path, flags[, mode], callback)`
+- 異步打開文件
+- path文件路徑
 
 ### 3. events 模塊
 
@@ -170,7 +180,17 @@ fs.createReadStream('input.txt')
 ### 6. util 模塊
 
 #### `util.inherits(constructor, superConstructor)`
-- 對象間原型繼承
+- 對象間`原型`繼承，內置定義不繼承(this.func()不繼承)
+
+#### `util.inspect(object,[showHidden],[depth],[colors])`
+- 對象轉字符串
+- showHidden=true顯示細節
+
+#### 類型判斷
+1. `util.isArray(object)`: 斷言是否為數組
+2. `util.isRegExp(object)`: 斷言是否為RegExp對象
+3. `util.isDate(object)`: 斷言是否為Date對象
+4. `util.isError(object)`: 斷言是否為Error對象
 
 ## 特殊對象
 
