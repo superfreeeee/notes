@@ -5,7 +5,7 @@
 ## Vue
 target | address
 ---|---
-Vue + TpyeScript起手式 | https://segmentfault.com/a/1190000011744210?utm_medium=referral&utm_source=tuicool
+Vue + TpyeScript起手式 | https://segmentfault.com/a/1190000011744210
 TypeScript | http://www.typescriptlang.org/docs/home.html https://www.tslang.cn/docs/handbook/variable-declarations.html https://typescript.bootcss.com/basic-types.html
 關閉socks-client | https://www.cnblogs.com/fxwoniu/p/11579096.html
 Vue & iframe | https://blog.csdn.net/github_37320188/article/details/82760687
@@ -14,9 +14,9 @@ Vue & iframe | https://blog.csdn.net/github_37320188/article/details/82760687
 target | address
 ---|---
 Vue封裝axis | https://blog.csdn.net/qq_39313596/article/details/82592809
-Vue Router模塊化 | https://segmentfault.com/a/1190000017380236?utm_source=tag-newest
+Vue Router模塊化 | https://segmentfault.com/a/1190000017380236
 Vuex模塊化 | https://segmentfault.com/a/1190000019924674
-Vuex實戰 | https://blog.csdn.net/qq_41485414/article/details/102806405?utm_source=app&from=singlemessage&isappinstalled=0
+Vuex實戰 | https://blog.csdn.net/qq_41485414/article/details/102806405
 
 ## UI框架
 target | address
@@ -76,11 +76,11 @@ Maven | https://www.runoob.com/maven/maven-tutorial.html
 SpringBoot + Maven打包 | https://www.cnblogs.com/spll/p/9947925.html https://www.cnblogs.com/gannalyo/p/9681567.html https://blog.csdn.net/daerzei/article/details/82883472
 Spring Framework Docs | https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
 Spring Boot Docs | https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/
-Spring Boot RESTful api (swagger | https://www.cnblogs.com/paddix/p/8215245.html https://segmentfault.com/a/1190000014168432?utm_medium=referral&utm_source=tuicool
+Spring Boot RESTful api (swagger | https://www.cnblogs.com/paddix/p/8215245.html https://segmentfault.com/a/1190000014168432
 Spring Boot 配置接口WebMvcConfigurer | https://blog.csdn.net/fmwind/article/details/81235401 https://www.jianshu.com/p/77482f0b59e9 https://www.jianshu.com/p/4f2807a5468c
 WebMvcConfigurer 跨域請求 | https://blog.csdn.net/weixin_41141219/article/details/80924735 https://www.wandouip.com/t5i378611/ https://www.cnblogs.com/shihaiming/p/9567420.html
 spring boot class-path | https://blog.csdn.net/qingmengwuhen1/article/details/78683110
-Spring AOP | https://blog.csdn.net/smartbetter/article/details/100716557?utm_source=app&from=singlemessage&isappinstalled=0
+Spring AOP | https://blog.csdn.net/smartbetter/article/details/100716557
 Springboot總整理 | https://mp.weixin.qq.com/s/9Q2xk3L9OErPga6rAN25Fg
 
 ## Spring 啟動原理
@@ -103,7 +103,7 @@ springboot整合redis | https://blog.csdn.net/qq_21806621/article/details/796712
 ## Spring Cloud
 target | address
 ---|---
-Spring Cloud | https://blog.csdn.net/qq_43371556/article/details/100599439?utm_source=app&from=singlemessage&isappinstalled=0
+Spring Cloud | https://blog.csdn.net/qq_43371556/article/details/100599439
 
 ## Spring Boot Annotation
 target | address
@@ -137,8 +137,8 @@ target | address
 工廠模式 | https://blog.csdn.net/weixin_35985385/article/details/81430545 https://www.cnblogs.com/cxydczzl/p/9597223.html
 Builder | https://m.2cto.com/kf/201808/772333.html 
 Proxy and CGLIB | https://www.cnblogs.com/liuboyuan/p/11157378.html
-Singleton | https://blog.csdn.net/stven_king/article/details/101759634?utm_source=app
-Observer | https://blog.csdn.net/abudexiatian/article/details/100916663?utm_source=app
+Singleton | https://blog.csdn.net/stven_king/article/details/101759634
+Observer | https://blog.csdn.net/abudexiatian/article/details/100916663
 
 
 ## Web服務器設計
@@ -155,21 +155,21 @@ Lombok簡單解說 | https://mp.weixin.qq.com/s/-4W5-fOK0sGSaNBktXA-YQ
 target | address
 ---|---
 數據庫範式 | https://www.xuebuyuan.com/3232513.html https://www.cnblogs.com/knowledgesea/p/3667395.html
-MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html https://blog.csdn.net/u012702547/article/details/83275695?utm_source=app
+MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html https://blog.csdn.net/u012702547/article/details/83275695
 SQL | https://www.w3school.com.cn/sql/index.asp
-rrdtool | https://baike.baidu.com/item/rrdtool/6051596?fr=aladdin
+rrdtool | https://baike.baidu.com/item/rrdtool/6051596
 
 ## Redis
 target | address
 ---|---
-. | https://www.runoob.com/redis/ https://blog.csdn.net/joker_pumpkin/article/details/90543464?utm_source=app https://blog.csdn.net/qq_37209293/article/details/88294792?utm_source=appredis-tutorial.html https://blog.csdn.net/aa1215018028/article/details/83096159?utm_source=app
-Redis常用命令大全 | https://blog.csdn.net/yuyue_999/article/details/102743322?utm_source=app&from=singlemessage&isappinstalled=0
-Redis原理 | https://blog.csdn.net/java_2017_csdn/article/details/88944515?utm_source=app&from=singlemessage&isappinstalled=0
+. | https://www.runoob.com/redis/ https://blog.csdn.net/joker_pumpkin/article/details/90543464 https://blog.csdn.net/qq_37209293/article/details/88294792 https://blog.csdn.net/aa1215018028/article/details/83096159
+Redis常用命令大全 | https://blog.csdn.net/yuyue_999/article/details/102743322
+Redis原理 | https://blog.csdn.net/java_2017_csdn/article/details/88944515
 
 # 4. Web相關
 target | address
 ---|---
-OSI七層模型 | https://baike.baidu.com/item/%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B/1441391?fr=aladdin https://www.cnblogs.com/heitaoq/p/9152842.html
+OSI七層模型 | https://baike.baidu.com/item/%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B/1441391 https://www.cnblogs.com/heitaoq/p/9152842.html
 淺談五層協議 | https://www.jianshu.com/p/e667d5512eb0
 tcp |
 comet | https://blog.csdn.net/RheaWang/article/details/74738884 https://www.ibm.com/developerworks/cn/web/wa-lo-comet/#fig001
@@ -185,8 +185,8 @@ HTTP多種認證(胕Basic,Digest) | https://www.jianshu.com/p/18fb07f2f65e
 HTTP Basic | https://blog.csdn.net/yhb241/article/details/80646485 https://www.cnblogs.com/xiaoxiaotank/p/11009796.html
 HTTP Digest | https://blog.csdn.net/gnnulzy/article/details/79822354 https://www.cnblogs.com/xiaoxiaotank/p/11078571.html
 HTTP,HTTPS差異 | https://www.cnblogs.com/dreamingbaobei/p/9801418.html 
-SNMP協議 | https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%8D%8F%E8%AE%AE/2986113?fromtitle=SNMP&fromid=133378&fr=aladdin
-WebSocket原理 | https://www.jianshu.com/p/ac74620333e7 https://baike.baidu.com/item/WebSocket/1953845?fr=aladdin&ivk_sa=1022817p
+SNMP協議 | https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%8D%8F%E8%AE%AE/2986113
+WebSocket原理 | https://www.jianshu.com/p/ac74620333e7 https://baike.baidu.com/item/WebSocket/1953845
 
 # 5. 算法
 
@@ -194,7 +194,7 @@ WebSocket原理 | https://www.jianshu.com/p/ac74620333e7 https://baike.baidu.com
 target | address
 ---|---
 Vue 源碼解析 | https://ustbhuangyi.github.io/vue-analysis/
-spring源码 | http://www.iocoder.cn/Spring/good-collection/?title
+spring源码 | http://www.iocoder.cn/Spring/good-collection/
 
 ## 加密算法
 target | address
@@ -222,13 +222,13 @@ Rust教程 | https://www.twle.cn/c/yufei/rust/rust-basic-index.html https://www.
 ## Unity
 target | address
 ---|---
-認識Unity | https://m.gamer.com.tw/home/creationDetail.php?sn=2491200
+認識Unity | https://m.gamer.com.tw/home/creationDetail.php
 
 ## 計算機圖形學
 target | address
 ---|---
-. | https://www.cnblogs.com/keguniang/p/9630796.html https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/279486?fr=aladdin
-OpenGL | https://baike.baidu.com/item/OpenGL/238984?fr=aladdin https://blog.csdn.net/ZLP_CSDN/article/details/84593427
+. | https://www.cnblogs.com/keguniang/p/9630796.html https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/279486
+OpenGL | https://baike.baidu.com/item/OpenGL/238984 https://blog.csdn.net/ZLP_CSDN/article/details/84593427
 
 ## 操作系統
 target | address

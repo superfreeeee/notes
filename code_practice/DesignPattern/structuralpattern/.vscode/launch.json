@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - AdapterObject",
+      "request": "launch",
+      "mainClass": "AdapterObject"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - AdapterInObject",
+      "request": "launch",
+      "mainClass": "AdapterInObject"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - AdapterInClass",
+      "request": "launch",
+      "mainClass": "AdapterInClass"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Adapter",
+      "request": "launch",
+      "mainClass": "Adapter"
+    }
+  ]
+}

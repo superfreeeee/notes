@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - AdapterObject",
+      "request": "launch",
+      "mainClass": "AdapterObject",
+      "projectName": "adapter_56967df5"
+    }
+  ]
+}
