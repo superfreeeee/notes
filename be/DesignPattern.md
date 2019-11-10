@@ -41,10 +41,12 @@
 ## Structural Pattern 結構型模式
 
 ### 1. Adapter 適配器模式
-![Adapter](./img/adapter.jpeg)
-- 核心：
+![Adapter](./img/adapter_class.jpeg)
+![Adapter](./img/adapter_object.jpeg)
+- 核心：適配類繼承體系不具有的接口
 - 實現要點：
-1. 
+1. 分為類Class和對象Object兩種實現，分別透過繼承extends與組合combination實現
+2. 兩種實現均透過委託將接口方法委託給實際存在方法(target接口委託給adaptee實現)
 
 ### 2. Bridge 橋接模式
 ![Bridge](./img/bridge.jpeg)

@@ -135,21 +135,25 @@ target | address
 target | address
 ---|---
 工廠模式 | https://blog.csdn.net/weixin_35985385/article/details/81430545 https://www.cnblogs.com/cxydczzl/p/9597223.html
-Builder | https://m.2cto.com/kf/201808/772333.html 
+Builder | https://m.2cto.com/kf/201808/772333.html
+adapter | https://www.cnblogs.com/lingshang/p/10708800.html https://blog.csdn.net/createchance/article/details/79422905
 Proxy and CGLIB | https://www.cnblogs.com/liuboyuan/p/11157378.html
 Singleton | https://blog.csdn.net/stven_king/article/details/101759634
 Observer | https://blog.csdn.net/abudexiatian/article/details/100916663
-
 
 ## Web服務器設計
 target | address
 ---|---
 C/S、B/S | https://www.cnblogs.com/yan1/p/9693762.html
+Tomcat | https://blog.csdn.net/weixin_35586546/article/details/81226887
 
 ## Java第三方輔助類庫
 target | address
 ---|---
 Lombok簡單解說 | https://mp.weixin.qq.com/s/-4W5-fOK0sGSaNBktXA-YQ
+SkyWalking分布式跟蹤系統 | https://blog.csdn.net/jianzhang11/article/details/102952115
+hadoop完全分布式集群搭建 | https://blog.csdn.net/weixin_43736084/article/details/100019918
+kafka介绍 | https://blog.csdn.net/u012129558/article/details/80065869
 
 # 3. 數據庫
 target | address
@@ -159,12 +163,18 @@ MongoDB | https://www.runoob.com/mongodb/mongodb-intro.html https://blog.csdn.ne
 SQL | https://www.w3school.com.cn/sql/index.asp
 rrdtool | https://baike.baidu.com/item/rrdtool/6051596
 
+## MySQL
+target | address
+---|---
+MySQL高可用架構 | https://blog.csdn.net/shengqianfeng/article/details/102721156
+
 ## Redis
 target | address
 ---|---
 . | https://www.runoob.com/redis/ https://blog.csdn.net/joker_pumpkin/article/details/90543464 https://blog.csdn.net/qq_37209293/article/details/88294792 https://blog.csdn.net/aa1215018028/article/details/83096159
 Redis常用命令大全 | https://blog.csdn.net/yuyue_999/article/details/102743322
 Redis原理 | https://blog.csdn.net/java_2017_csdn/article/details/88944515
+Redis RDB AOF | https://blog.csdn.net/qq_35190492/article/details/102958250
 
 # 4. Web相關
 target | address
@@ -181,6 +191,7 @@ target | address
 ---|---
 http請求、響應 | https://www.cnblogs.com/haiyan123/p/7777924.html
 HTTP報文解析 | https://blog.csdn.net/yutiab69/article/details/82869239 https://blog.csdn.net/a_fool_program_ape/article/details/81748544
+HTTP协议详解 | https://blog.csdn.net/Summer_Lyf/article/details/102719038
 HTTP多種認證(胕Basic,Digest) | https://www.jianshu.com/p/18fb07f2f65e
 HTTP Basic | https://blog.csdn.net/yhb241/article/details/80646485 https://www.cnblogs.com/xiaoxiaotank/p/11009796.html
 HTTP Digest | https://blog.csdn.net/gnnulzy/article/details/79822354 https://www.cnblogs.com/xiaoxiaotank/p/11078571.html
@@ -188,17 +199,18 @@ HTTP,HTTPS差異 | https://www.cnblogs.com/dreamingbaobei/p/9801418.html
 SNMP協議 | https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%8D%8F%E8%AE%AE/2986113
 WebSocket原理 | https://www.jianshu.com/p/ac74620333e7 https://baike.baidu.com/item/WebSocket/1953845
 
-# 5. 算法
-
 ## 源碼分析
 target | address
 ---|---
 Vue 源碼解析 | https://ustbhuangyi.github.io/vue-analysis/
 spring源码 | http://www.iocoder.cn/Spring/good-collection/
 
+# 5. 算法
+
 ## 加密算法
 target | address
 ---|---
+算法综述 | https://blog.csdn.net/m0_37907797/article/details/102661778
 加密算法 | https://blog.csdn.net/u013565368/article/details/53081195
 RSA原理1 | http://www.ruanyifeng.com/blog/2013/06/rsa_algorithm_part_one.html
 RSA原理2 | http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html
@@ -212,8 +224,6 @@ target | address
 Docker 部署 SprinBoot簡化-jib | https://mp.weixin.qq.com/s/ZqWktjLUOzHNKOGE6BfHRA
 
 # 7. 其他
-
-## 協議
 target | address
 ---|---
 五种开源协议的比较 | http://www.ha97.com/833.html
@@ -229,6 +239,7 @@ target | address
 ---|---
 . | https://www.cnblogs.com/keguniang/p/9630796.html https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/279486
 OpenGL | https://baike.baidu.com/item/OpenGL/238984 https://blog.csdn.net/ZLP_CSDN/article/details/84593427
+光柵圖形學算法 | https://blog.csdn.net/Silent_F/article/details/74279325
 
 ## 操作系統
 target | address
@@ -239,3 +250,7 @@ Windows句柄 | https://blog.csdn.net/wyx0224/article/details/83385168
 target | address
 ---|---
 
+## 雲服務器
+target | address
+---|---
+IaaS PaaS SaaS | http://www.elecfans.com/d/811831.html
