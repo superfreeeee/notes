@@ -1,0 +1,40 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - QueueByArray",
+      "request": "launch",
+      "mainClass": "QueueByArray"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - QueueByLinkedList",
+      "request": "launch",
+      "mainClass": "QueueByLinkedList"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - StackByArray",
+      "request": "launch",
+      "mainClass": "StackByArray"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - StackByLinkedList",
+      "request": "launch",
+      "mainClass": "StackByLinkedList"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - MyLinkedList",
+      "request": "launch",
+      "mainClass": "MyLinkedList"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - MyArrayList",
+      "request": "launch",
+      "mainClass": "MyArrayList"
+    }
+  ]
+}
