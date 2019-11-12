@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    # url: jdbc:mysql://localhost:3306/test_spring?useUnicode=true&characterEncoding=UTF-8
+#    url: jdbc:mysql://[address:port]/[database_name]?[options]
+    username: root
+    password: 123456789
+
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: cn.superfree.demo2.entity
+
+server:
+  port: 8999

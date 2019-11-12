@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * MyLinkedList
@@ -74,7 +75,23 @@ public class MyLinkedList<T> implements Iterable<T>{
   }
 
   private class LinkedListIterator implements Iterator<T> {
+    public boolean hasNext() {
+      return current.next != null;
+    }
 
+    public T next() {
+      if(!hasNext())
+        throw new NoSuchElementException();
+      return (current = current.next).data;
+    }
+
+    public void remove() {
+      current.prev.next = current.next;
+      if(current.next != null)
+        current.next.prev = current.prev;
+    }
+
+    private Node<T> current = head;
   }
 
   private void addBefore(Node<T> p, T item) {

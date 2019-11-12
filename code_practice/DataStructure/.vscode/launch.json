@@ -2,6 +2,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - AVLTree",
+      "request": "launch",
+      "mainClass": "AVLTree",
+      "projectName": "DataStructure_698d6e28"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - BinarySearchTree",
+      "request": "launch",
+      "mainClass": "BinarySearchTree",
+      "projectName": "DataStructure_698d6e28"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - QueueByArray",
       "request": "launch",
       "mainClass": "QueueByArray"
