@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_demo3?useUnicode=true&characterEncoding=UTF-8
+    #    url: jdbc:mysql://[address:port]/[database_name]?[options]
+    username: root
+    password: 123456789
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: cn.superfree.demo3.entity
+
+server:
+  port: 8999

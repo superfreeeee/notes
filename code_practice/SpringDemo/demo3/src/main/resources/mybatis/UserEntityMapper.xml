@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.superfree.demo3.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="cn.superfree.demo3.entity.UserEntity">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+    </resultMap>
+
+    <!-- operation -->
+
+    <select id="queryUserByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+          *
+        from user
+        where username=#{username, jdbcType=VARCHAR}
+    </select>
+
+    <insert id="insert" parameterType="cn.superfree.demo3.entity.UserEntity">
+        insert into user
+        (username, password)
+        values
+        (#{username, jdbcType=VARCHAR}, #{password, jdbcType=VARCHAR})
+    </insert>
+
+
+</mapper>
