@@ -7,6 +7,14 @@
 4. 所有操作皆具原子性
 
 # redis客戶端啟動相關
+- redis服務啟動
+```sh
+# 一般啟動
+$ redis-server
+
+# 配置啟動(後台運行)
+$ redis-server etc/redis.conf
+```
 - redis客戶端啟動
 ```sh
 $ redis-cli

@@ -11,7 +11,6 @@ SEO | Search Engine Optimization | 搜索引擎優化
 Socket | 
 WebSocket | 
 
-
 ## 通信協議
 Abbreviation | Full Name | Translation | Description
 -|-|-|-
@@ -28,6 +27,14 @@ UDP |
 TCP (層) | 
 IP (層) | 
 MAC (層) | 
+
+## Api 風格
+Abbreviation | Full Name | Translation | Description
+-|-|-|-
+ROA | Resource-Oriented Architecture | 面向資源架構
+REST | Representational State Transfer | 表象層狀態轉換 | 超文本驅動
+SOAP | 
+HATEOS | hypermedia as the engine of application state | 超媒體作為應用狀態引擎
 
 RFC
 DDOS

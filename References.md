@@ -172,6 +172,7 @@ MySQL高可用架構 | https://blog.csdn.net/shengqianfeng/article/details/10272
 target | address
 ---|---
 . | https://www.runoob.com/redis/ https://blog.csdn.net/joker_pumpkin/article/details/90543464 https://blog.csdn.net/qq_37209293/article/details/88294792 https://blog.csdn.net/aa1215018028/article/details/83096159
+Mac 安裝 | https://www.cnblogs.com/feijl/p/6879929.html
 Redis常用命令大全 | https://blog.csdn.net/yuyue_999/article/details/102743322
 Redis原理 | https://blog.csdn.net/java_2017_csdn/article/details/88944515
 Redis RDB AOF | https://blog.csdn.net/qq_35190492/article/details/102958250
@@ -185,7 +186,6 @@ tcp |
 comet | https://blog.csdn.net/RheaWang/article/details/74738884 https://www.ibm.com/developerworks/cn/web/wa-lo-comet/#fig001
 SPA vs MPA | https://www.cnblogs.com/yangAL/p/10616604.html
 
-
 ## 應用層協議
 target | address
 ---|---
@@ -198,6 +198,12 @@ HTTP Digest | https://blog.csdn.net/gnnulzy/article/details/79822354 https://www
 HTTP,HTTPS差異 | https://www.cnblogs.com/dreamingbaobei/p/9801418.html 
 SNMP協議 | https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%8D%8F%E8%AE%AE/2986113
 WebSocket原理 | https://www.jianshu.com/p/ac74620333e7 https://baike.baidu.com/item/WebSocket/1953845
+
+## 接口風格
+target | address
+---|---
+REST | 
+SOAP | 
 
 ## 源碼分析
 target | address
