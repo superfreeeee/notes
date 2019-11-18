@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="list-item">
+    123
+    <text>
+      12345
+    </text>
+  </view>
+  <view class="list-item">
+    123456
+  </view>
+  <view class="list-item">
+    123456
+  </view>
+  <view class="list-item">
+    123456
+  </view>
+</view>

@@ -1,0 +1,23 @@
+/**index.wxss**/
+.list-item {
+  /* background-color: rgb(253, 85, 85); */
+  border-top: 1px solid #EDEDED; 
+  border-bottom: 1px solid #EDEDED; 
+  margin-bottom: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.w1 {
+  width: 80%;
+}
+
+.w2 {
+  width: 60%;
+}
+
+.w3 {
+  width: 40%;
+}
+
+

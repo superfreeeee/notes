@@ -78,10 +78,11 @@ public class AVLTree<T extends Comparable<? super T>> {
     printTree(root, result, 0);
     result.append("\n");
     System.out.println(result);
-}
+  }
 
   private void printTree(AVLNode<T> t, StringBuilder result, int offset) {
-    addOffset(result, offset);
+    for(int i=0 ; i<offset ; i++)
+      result.append(" ");
     if(t != null) {
       result.append(t.element);
       if(t.left == null && t.right == null) {
@@ -94,11 +95,6 @@ public class AVLTree<T extends Comparable<? super T>> {
     } else {
       result.append("null");
     }
-  }
-
-  private void addOffset(StringBuilder result, int offset) {
-    for(int i=0 ; i<offset ; i++)
-      result.append(" ");
   }
 
   private static class AVLNode<T> {
