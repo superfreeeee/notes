@@ -15,9 +15,9 @@
       },
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "assets/icons/shouye.png",
-        "selectedIconPath": "assets/icons/shouye.png"
+        "text": "打卡",
+        "iconPath": "assets/icons/home.png",
+        "selectedIconPath": "assets/icons/home.png"
       },
       {
         "pagePath": "pages/profile/profile",

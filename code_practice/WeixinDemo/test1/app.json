@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/target/index",
+    "pages/profile/index",
+    "pages/target/target-edit/target-edit"
+  ],
+  "tabBar": {
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/target/index",
+        "text": "目标",
+        "iconPath": "assets/icons/createtask.png",
+        "selectedIconPath": "assets/icons/createtask_fill.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "打卡",
+        "iconPath": "assets/icons/label.png",
+        "selectedIconPath": "assets/icons/label_fill.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "assets/icons/mine.png",
+        "selectedIconPath": "assets/icons/mine_fill.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "追光计划",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

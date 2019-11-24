@@ -1,4 +1,27 @@
 <!--pages/target/target.wxml-->
 <view class="container">
-  
+  <view class="target-item" wx:for="{{array}}">
+    <view class="target-icon">
+      <image src="assets/bianji.png"></image>    
+    </view>
+    <view class="target-content">
+      <text class="target-title">title 0</text>
+      <progress class="target-progress" percent="{{item.percent}}"></progress>
+    </view>
+    <view class="target-mark" bindtap="markTarget">
+      <image src="{{item.isMarked ? 'assets/shoucang_1.png':'assets/shoucang.png'}}"></image>
+    </view>
+  </view>
+  <!-- <view class="target-item" wx:for="{{targetList}}">
+    <view class="target-icon">
+      <image src="assets/bianji.png"></image>    
+    </view>
+    <view class="target-content">
+      <text class="target-title">{{item.title}}</text>
+      <progress class="target-progress" percent="{{item.percent}}"></progress>
+    </view>
+    <view class="target-mark" bindtap="markTarget">
+      <image src="{{item.isMarked ? 'assets/shoucang_1.png':'assets/shoucang.png'}}"></image>
+    </view>
+  </view> -->
 </view>
