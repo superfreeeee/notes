@@ -1,5 +1,8 @@
 package cn.superfree.visualizationsimulation.constant;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import lombok.Data;
 
 @Data
@@ -10,6 +13,8 @@ public class Response {
   private String message;
 
   private Object data;
+
+  private Map<String, String> rels = new HashMap<>();
 
   private Response(int code, String message, Object data) {
     this.code = code;
@@ -39,5 +44,9 @@ public class Response {
 
   public static Response error(String message) {
     return new Response(403, message, null);
+  }
+
+  public void putRel(String key, String value) {
+    rels.put(key, value);
   }
 }
