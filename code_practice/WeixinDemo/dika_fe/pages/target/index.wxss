@@ -1,0 +1,55 @@
+/* pages/target/index.wxss */
+.target-list {
+  background-color: #DEDEDE;
+}
+
+.target-item {
+  margin-top: 10px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  min-height: 70px;
+}
+
+.target-item-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.target-item-mark {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+
+.target-item-content {
+  font-size: 15px;
+  flex: 1;
+}
+
+.target-item-title {
+  font-size: 20px;
+}
+
+.target-create {
+  background-color: skyblue;
+
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  height: 60px;
+  width: 60px;
+  border-radius: 40px;
+
+  color: white;
+  text-align: center;
+  line-height: 55px;
+  font-size: 30px;
+}

@@ -1,13 +1,14 @@
 package cn.superfree.visualizationsimulation.datastructure.list;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 public abstract class MyList {
 
     protected String type;
 
-    private static Map<String, Class<?>> options;
+    private static Map<String, Class<?>> options = new HashMap<>();
 
     static {
         options.put("SingleLinkedList", SingleLinkedList.class);
@@ -16,10 +17,7 @@ public abstract class MyList {
     public static MyList create(String type) {
         try {
             return (MyList) options.get(type).newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-            return null;
-        } catch (IllegalAccessException e) {
+        } catch (ReflectiveOperationException e) {
             e.printStackTrace();
             return null;
         }

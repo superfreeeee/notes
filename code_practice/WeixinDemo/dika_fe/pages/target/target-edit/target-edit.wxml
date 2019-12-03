@@ -1,0 +1,9 @@
+<!--pages/target/target-edit/target-edit.wxml-->
+<view>
+  <text>修改目标页</text>
+  <text>
+    title: {{editTarget.title}}
+    description: {{editTarget.description}}
+    marked: {{editTarget.marked}}
+  </text>
+</view>

@@ -1,0 +1,46 @@
+/* pages/profile/index.wxss */
+.profile {
+  /* background-color: white; */
+  margin-top: 10px;
+}
+
+.profile-header, .profile-option {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 60px;
+  /* border-bottom: #EDEDED 1px solid; */
+}
+
+.profile-avatar {
+  width: 55px;
+  height: 55px;
+  margin: 20px;
+}
+
+.profile-header {
+  font-size: 25px;
+}
+
+.profile-name, .profile-option-title {
+  flex: 1;
+}
+
+.profile-detail {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.profile-detail-small {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  opacity: 0.6;
+}
+
+.profile-option {
+  padding-left: 20px;
+}

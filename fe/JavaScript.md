@@ -1,4 +1,29 @@
-# JavaScript基礎(ES6特性)
+# JavaScript基礎
+
+## Object Methods
+
+### 1. `Object.defineProperty(obj, prop, description)`
+
+#### 參數
+Parameter | Type | Description
+-|-|-
+obj | Object | 要處理的對象
+prop | String | 添加 or 修改的屬性名稱
+description | Object | 添加 or 修改的屬性描述符
+
+#### 描述符屬性
+Description Prop | Type | Default Value | Description
+-|-|-|-
+configurable | Boolean | false | 可配置性(修改屬性配置)
+enumerable | Boolean | false | 可遍歷性
+value | any | undefined | 值
+writable | Boolean | false | 可修改性(修改屬性值)
+get | Function | undefined | 屬性的getter，調用時無參數、this綁定到屬性所屬對象
+set | Function | undefined | 屬性的setter，調用時無參數、this綁定到屬性所屬對象
+
+- `value` 和 `getter`, `setter` 不能同時存在
+
+# ES6特性
 
 ## 1. Symbol
 - 繼 `undefined`, `null`, `boolean`, `string`, `number`, `object` 六種基本類型後第七種基本類型 `Symbol`
@@ -456,5 +481,6 @@ const nodes = Array.from(foo);
 
 ## 8. 
 
-
+# MVVM模式實現
+- 使用
 

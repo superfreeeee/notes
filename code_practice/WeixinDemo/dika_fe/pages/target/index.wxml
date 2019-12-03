@@ -1,0 +1,15 @@
+<!--pages/target/index.wxml-->
+<view class="container target-list">
+  <view class="target-item" wx:for="{{targetList}}" wx:key="{{item.id}}" bindtap="editTarget" data-index="{{index}}">
+    <image class="target-item-icon" src="/assets/targetIcon/label.png"></image>
+    <view class="target-item-content" >
+      <view class="target-item-title">{{item.title}}</view>
+      <progress percent="40"></progress>
+    </view>
+    <image id="mark" class="target-item-mark" src="{{item.marked ? '/assets/targetIcon/shoucang_1.png' : '/assets/targetIcon/shoucang.png'}}"></image>
+  </view>
+</view>
+
+<view class="target-create" bindtap="createTarget">
++
+</view>

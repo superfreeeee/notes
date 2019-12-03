@@ -1,0 +1,43 @@
+<!--pages/profile/index.wxml-->
+<view class="container profile">
+  <view class="profile-header" 
+    bindtap="viewProfileDetail"
+    data-url='profile-detail/profile-detail'
+  >
+    <image class="profile-avatar" src="/assets/profilePicture/mine.png"></image>
+    <view class="profile-name">
+      {{userInfo.username}}
+    </view>
+    <image class="profile-detail" src="/assets/profilePicture/arrow-right.png"></image>
+  </view>
+
+  <view class="profile-option" 
+    wx:for="{{options}}" 
+    wx:key="index" 
+    bindtap="viewDetail" 
+    data-url="{{item.url}}"
+  >
+    <view class="profile-option-title">
+      {{item.title}}
+    </view>
+    <image class="profile-detail-small" src="/assets/profilePicture/arrow-right.png"></image>
+  </view>
+  <!-- <view class="profile-option">
+    <view class="profile-option-title">
+      礼物商店
+    </view>
+    <image class="profile-detail" src="/assets/profilePicture/arrow-right.png"></image>
+  </view>
+  <view class="profile-option">
+    <view class="profile-option-title">
+      设置
+    </view>
+    <image class="profile-detail" src="/assets/profilePicture/arrow-right.png"></image>
+  </view>
+  <view class="profile-option">
+    <view class="profile-option-title">
+      分享
+    </view>
+    <image class="profile-detail" src="/assets/profilePicture/arrow-right.png"></image>
+  </view> -->
+</view>

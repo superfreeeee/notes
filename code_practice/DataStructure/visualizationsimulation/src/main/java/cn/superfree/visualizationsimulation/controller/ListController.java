@@ -7,10 +7,7 @@ import cn.superfree.visualizationsimulation.datastructure.list.MyListResponse;
 import cn.superfree.visualizationsimulation.service.InstanceStatusEnum;
 import cn.superfree.visualizationsimulation.service.ListService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import cn.superfree.visualizationsimulation.constant.Response;
 
@@ -44,7 +41,7 @@ public class ListController {
     }
 
     @PostMapping("/create")
-    public Response create(String type) {
+    public Response create(@RequestParam String type) {
         MyListResponse myListResponse = listService.create(type);
         if(myListResponse == null) {
             return Response.error("create fail");

@@ -1,0 +1,14 @@
+/**app.wxss**/
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #DEDEDE;
+} 
+
+page {
+  width: 100%;
+  height: 100%;
+}

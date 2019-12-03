@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/profile/index",
+    "pages/target/index",
+    "pages/login/index",
+    "pages/target/target-edit/target-edit",
+    "pages/profile/profile-detail/profile-detail",
+    "pages/profile/profile-friends/profile-friends",
+    "pages/profile/profile-giftshop/profile-giftshop",
+    "pages/profile/profile-setting/profile-setting",
+    "pages/profile/profile-share/profile-share",
+    "pages/target/target-create/target-create",
+    "pages/target/target-analysis/target-analysis"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/target/index",
+        "text": "目标",
+        "iconPath": "assets/tabBarIcon/createtask.png",
+        "selectedIconPath": "assets/tabBarIcon/createtask_fill.png"
+      },
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "assets/tabBarIcon/homepage.png",
+        "selectedIconPath": "assets/tabBarIcon/homepage_fill.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "assets/tabBarIcon/mine.png",
+        "selectedIconPath": "assets/tabBarIcon/mine_fill.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "嘀卡",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

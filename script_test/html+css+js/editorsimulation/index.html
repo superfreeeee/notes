@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="index.css">
+
+</head>
+<body onload="init()">
+  <div class="container">
+    <div class="wrapper">
+      <div id="input"></div>
+      <div>
+        <span>1</span><span>1</span><span>1</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  function init() {
+    const rows = ["1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890", "456 456"]
+    registerMovement()
+    renderText(rows)
+  }
+
+  function renderText(rows) {
+    console.log('render text')
+    let html = ''
+    for(let string of rows) {
+      html += newRow(string)
+    }
+
+    const wrapper = document.getElementsByClassName('wrapper')[0]
+    wrapper.innerHTML += html
+
+    console.log(wrapper)
+    console.log(wrapper.innerHTML)
+
+    function newChar(c) {
+      return `<span>${c}</span>`
+    }
+
+    function newRow(string) {
+      let content = ''
+      for(let c of string) {
+        content += newChar(c)
+      }
+      return `<div>${content}</div>`
+    }
+  }
+
+  function registerMovement() {
+    console.log('init')
+    let inputX = 0;
+    let inputY = 0;
+    const offsetX = 8;
+    const offsetY = 20;
+
+
+    document.onkeydown = function(e) {
+      const keyCode = e.keyCode
+      // console.log(e)
+      // console.log(keyCode)
+      const input = document.getElementById('input')
+      if(37 <= keyCode && keyCode <= 40) {
+        if(keyCode === 37) {
+          inputX -= offsetX
+        } else if(keyCode === 38) {
+          inputY -= offsetY
+        } else if(keyCode === 39) {
+          inputX += offsetX
+        } else if(keyCode === 40) {
+          inputY += offsetY
+        }
+        const rect = document.getElementsByClassName('wrapper')[0].getBoundingClientRect()
+        console.log(rect)
+        if(inputX <= 0) {
+          inputX = 0
+        } else if(inputX >= rect.width) {
+          inputX = rect.width - (rect.width % offsetX)
+        }
+        if(inputY <= 0) {
+          inputY = 0;
+        } else if(inputY >= rect.height) {
+          inputY = rect.height - (rect.height % offsetY)
+        }
+        input.style.left = inputX + 'px'
+        input.style.top = inputY + 'px'
+      } else if(e.key.length === 1) {
+        const c = e.key
+        // console.log(c)
+      }
+    }
+  }
+  </script>
+</body>
+</html>
