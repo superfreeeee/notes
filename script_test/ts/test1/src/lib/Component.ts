@@ -1,3 +1,5 @@
+import Model from './Model'
+
 class Component {
 
     container: HTMLDivElement

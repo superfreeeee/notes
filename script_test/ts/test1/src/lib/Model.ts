@@ -4,3 +4,5 @@ class Model {
 
     data: Object
 }
+
+export default Model
