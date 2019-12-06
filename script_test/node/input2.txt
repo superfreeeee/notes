@@ -1,9 +1,0 @@
-hello world!
-my name is caishangda
-
-this
-is
-a
-test
-message
-for stream reading
