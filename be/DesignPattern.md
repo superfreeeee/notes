@@ -4,7 +4,7 @@
 
 ### 1. Abstract Factory 抽象工廠模式
 ![Abstract Factory](./img/abstractfactory.jpeg)
-<!-- ![Abstract Factory](./img/abstractfactory-2.jpeg) -->
+![Abstract Factory](./img/abstractfactory-2.jpeg)
 - 核心：客戶端透過抽象工廠接口創建產品
 - 實現要點：
 1. 面對抽象工廠接口編程，每個產品組合組成一個工廠類，一個產品對應工廠的一個創建方法(工廠方法)
